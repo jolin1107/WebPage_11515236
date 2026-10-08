@@ -1,450 +1,3421 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="藍天咖啡，為手沖咖啡愛好者挑選當季精品咖啡豆，讓每一杯都清澈、明亮、值得細品。">
-  <title>藍天咖啡｜讓風味，慢慢抵達</title>
+  <meta name="description" content="蛋糕星球 CAKE PLANET — 專為年輕世代打造的極簡純粹手工蛋糕。黑白美學、減糖配方、頂級日本與法國食材，探索每一口的精緻甜點宇宙。">
+  <title>蛋糕星球 CAKE PLANET｜純粹手工蛋糕・極簡黑白美學</title>
+  
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Noto+Sans+TC:wght@300;400;500;600;700;750;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
+    /* ==========================================================
+       CSS Variables & Reset (黑白極簡、精緻純粹)
+       ========================================================== */
     :root {
-      --navy: #062742;
-      --blue: #0c5b95;
-      --sky: #75c6e8;
-      --mist: #eaf5f7;
-      --cream: #fbfaf6;
-      --ink: #122534;
-      --muted: #607482;
-      --line: #d7e4e8;
-      --sand: #e5b66b;
-      --shadow: 0 18px 50px rgba(6, 39, 66, .13);
+      --black: #0a0a0c;
+      --black-card: #141417;
+      --black-elevated: #1f1f24;
+      --charcoal: #2a2a30;
+      --gray-dark: #4b4b54;
+      --gray-mid: #787885;
+      --gray-light: #d8d8e0;
+      --gray-bg: #f5f5f7;
+      --white: #ffffff;
+      --white-pure: #ffffff;
+      --border-light: #e5e5ea;
+      --border-dark: #26262c;
+      --accent-silver: #a0a0ab;
+      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.14);
+      --shadow-glow: 0 0 35px rgba(255, 255, 255, 0.12);
+      --radius-sm: 4px;
+      --radius-md: 10px;
+      --radius-lg: 18px;
+      --radius-full: 9999px;
+      --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
-      color: var(--ink);
-      background: var(--cream);
-      font: 16px/1.7 "Noto Sans TC", sans-serif;
-      -webkit-font-smoothing: antialiased;
+      padding: 0;
     }
-    a { color: inherit; text-decoration: none; }
-    button, input { font: inherit; }
-    button { cursor: pointer; }
-    .wrap { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
-    .eyebrow {
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      background-color: var(--white);
+      color: var(--black);
+      font-family: "Plus Jakarta Sans", "Noto Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      letter-spacing: -0.01em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background-color: var(--black);
+      color: var(--white);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: opacity var(--transition-fast), color var(--transition-fast);
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+      transition: all var(--transition-fast);
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    input, select, textarea {
+      font-family: inherit;
+      font-size: 15px;
+    }
+
+    .container {
+      width: min(1200px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .editorial-font {
+      font-family: "Cinzel", "Noto Sans TC", serif;
+      letter-spacing: 0.08em;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--black);
+      outline-offset: 3px;
+    }
+
+    /* ==========================================================
+       Header & Navigation
+       ========================================================== */
+    .top-bar {
+      background-color: var(--black);
+      color: var(--white);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-align: center;
+      padding: 8px 16px;
+      text-transform: uppercase;
+      font-weight: 500;
+      border-bottom: 1px solid var(--border-dark);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .top-bar strong {
+      background: var(--white);
+      color: var(--black);
+      padding: 1px 7px;
+      border-radius: 2px;
+      font-size: 11px;
+      margin-right: 4px;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-light);
+      transition: all var(--transition-smooth);
+    }
+
+    .nav-wrapper {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    /* Brand Logo (遵循規格：粗體 750) */
+    .brand {
       display: flex;
       align-items: center;
       gap: 12px;
-      margin: 0 0 18px;
-      color: var(--blue);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .18em;
+      letter-spacing: 0.06em;
     }
-    .eyebrow::before { width: 28px; height: 1px; background: currentColor; content: ""; }
-    .section-title {
-      margin: 0;
-      font: 800 clamp(30px, 4vw, 46px)/1.28 "Noto Serif TC", serif;
-      letter-spacing: .045em;
+
+    .planet-logo-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--black);
+      border-radius: 50%;
+      position: relative;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
     }
-    .text-blue { color: var(--blue); }
-    .button, .outline-link {
-      display: inline-flex;
-      min-height: 50px;
+
+    .planet-logo-icon svg {
+      width: 22px;
+      height: 22px;
+      fill: var(--white);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand-text span:first-child {
+      font-size: 18px;
+      font-weight: 750; /* 依據 onepage.md 規格修改：粗體 750 */
+      letter-spacing: 0.06em;
+    }
+
+    .brand-text span:last-child {
+      font-size: 9px;
+      letter-spacing: 0.24em;
+      color: var(--gray-mid);
+      font-weight: 600;
+      font-family: "Cinzel", serif;
+    }
+
+    /* Nav Links */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--black);
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--black);
+      transition: width var(--transition-fast);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Nav Action Buttons */
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .cart-trigger-btn {
+      position: relative;
+      display: flex;
       align-items: center;
       justify-content: center;
-      padding: 10px 23px;
-      border: 1px solid transparent;
-      border-radius: 2px;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-full);
+      background: var(--white);
+      transition: all var(--transition-fast);
+    }
+
+    .cart-trigger-btn:hover {
+      background: var(--gray-bg);
+      border-color: var(--black);
+    }
+
+    .cart-badge {
+      position: absolute;
+      top: -3px;
+      right: -3px;
+      background: var(--black);
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 700;
+      min-width: 18px;
+      height: 18px;
+      border-radius: 9px;
+      display: grid;
+      place-items: center;
+      padding: 0 4px;
+      border: 2px solid var(--white);
+    }
+
+    .btn-header-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--black);
+      color: var(--white);
+      padding: 10px 22px;
+      border-radius: var(--radius-full);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      transition: all var(--transition-smooth);
+    }
+
+    .btn-header-cta:hover {
+      background: #232328;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-light);
+      background: var(--white);
+      place-items: center;
+    }
+
+    /* ==========================================================
+       Hero Section
+       ========================================================== */
+    .hero-section {
+      position: relative;
+      background: linear-gradient(180deg, #ffffff 0%, #f7f7f9 100%);
+      padding: 80px 0 110px;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 56px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gray-mid);
+      margin-bottom: 24px;
+      background: var(--white);
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-light);
+    }
+
+    .hero-eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--black);
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+    }
+
+    .hero-title {
+      font-size: clamp(38px, 5.2vw, 68px);
+      font-weight: 900;
+      line-height: 1.14;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+      color: var(--black);
+    }
+
+    .hero-title .highlight-box {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      padding: 0 14px;
+      margin-right: 6px;
+      transform: skewX(-4deg);
+      border-radius: 4px;
+    }
+
+    .hero-desc {
+      font-size: clamp(16px, 1.3vw, 18px);
+      line-height: 1.8;
+      color: var(--gray-dark);
+      max-width: 540px;
+      margin-bottom: 38px;
+    }
+
+    .hero-action-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--black);
+      color: var(--white);
+      padding: 16px 36px;
+      border-radius: var(--radius-full);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      border: 2px solid var(--black);
+      transition: all var(--transition-smooth);
+    }
+
+    .btn-primary:hover {
+      background: #1e1e24;
+      border-color: #1e1e24;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--white);
+      color: var(--black);
+      padding: 16px 32px;
+      border-radius: var(--radius-full);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      border: 2px solid var(--black);
+      transition: all var(--transition-smooth);
+    }
+
+    .btn-outline:hover {
+      background: var(--black);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* Trust Stats (遵循規格：純手工製作新鮮慢烤) */
+    .hero-trust-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 32px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .trust-stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .trust-stat-num {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: var(--black);
+    }
+
+    .trust-stat-label {
+      font-size: 12px;
+      color: var(--gray-mid);
+      font-weight: 600;
+    }
+
+    /* Hero Visual Card */
+    .hero-visual-card {
+      position: relative;
+      background: var(--black);
+      border-radius: 28px;
+      padding: 44px 36px;
+      color: var(--white);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid var(--border-dark);
+    }
+
+    .hero-visual-card::before {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -30%;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-tag-badge {
+      align-self: flex-start;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--white);
+      padding: 5px 14px;
+      border-radius: var(--radius-full);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .hero-orbit-stage {
+      width: 280px;
+      height: 280px;
+      position: relative;
+      display: grid;
+      place-items: center;
+      margin: 10px 0 24px;
+    }
+
+    .orbit-ring-outer {
+      position: absolute;
+      width: 270px;
+      height: 270px;
+      border: 1px dashed rgba(255, 255, 255, 0.25);
+      border-radius: 50%;
+      animation: rotateSlow 45s linear infinite;
+    }
+
+    .orbit-ring-inner {
+      position: absolute;
+      width: 210px;
+      height: 210px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+    }
+
+    .orbit-mini-planet {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      width: 14px;
+      height: 14px;
+      background: var(--white);
+      border-radius: 50%;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+    }
+
+    @keyframes rotateSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .cake-hero-svg {
+      width: 220px;
+      height: 220px;
+      filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.6));
+      position: relative;
+      z-index: 2;
+      transition: transform var(--transition-smooth);
+    }
+
+    .hero-visual-card:hover .cake-hero-svg {
+      transform: scale(1.05) translateY(-6px);
+    }
+
+    .hero-cake-details {
+      width: 100%;
+      text-align: center;
+      margin-top: 12px;
+      z-index: 2;
+    }
+
+    .hero-cake-name {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+    }
+
+    .hero-cake-specs {
+      font-size: 13px;
+      color: var(--accent-silver);
+      margin-bottom: 18px;
+    }
+
+    .hero-cake-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding-top: 18px;
+    }
+
+    .hero-price {
+      font-size: 24px;
+      font-weight: 800;
+      font-family: "Cinzel", serif;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-quick-btn {
+      background: var(--white);
+      color: var(--black);
+      padding: 10px 20px;
+      border-radius: var(--radius-full);
+      font-size: 13px;
+      font-weight: 700;
+      transition: all var(--transition-fast);
+    }
+
+    .hero-quick-btn:hover {
+      background: #e2e2e8;
+      transform: scale(1.04);
+    }
+
+    /* ==========================================================
+       Brand Concept Section
+       ========================================================== */
+    .concept-section {
+      padding: 110px 0;
+      background: var(--white);
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 64px;
+    }
+
+    .section-eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gray-mid);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 3.8vw, 44px);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      color: var(--black);
+      margin-bottom: 18px;
+    }
+
+    .section-title em {
+      font-style: normal;
+      background: linear-gradient(180deg, transparent 65%, #000 65%);
+      padding: 0 4px;
+    }
+
+    .section-subtitle {
+      font-size: 16px;
+      color: var(--gray-dark);
+      line-height: 1.8;
+    }
+
+    .concept-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .concept-card {
+      background: var(--gray-bg);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+      position: relative;
+      transition: all var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .concept-card:hover {
+      background: var(--white);
+      border-color: var(--black);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .concept-card.dark {
+      background: var(--black);
+      color: var(--white);
+      border-color: var(--border-dark);
+    }
+
+    .concept-card.dark:hover {
+      background: var(--black-card);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .concept-number {
+      font-size: 14px;
+      font-weight: 800;
+      font-family: "Cinzel", serif;
+      letter-spacing: 0.15em;
+      color: var(--gray-mid);
+      margin-bottom: 24px;
+    }
+
+    .concept-card.dark .concept-number {
+      color: var(--accent-silver);
+    }
+
+    .concept-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-md);
+      background: var(--white);
+      border: 1px solid var(--border-light);
+      display: grid;
+      place-items: center;
+      margin-bottom: 28px;
+    }
+
+    .concept-card.dark .concept-icon {
+      background: var(--charcoal);
+      border-color: var(--border-dark);
+    }
+
+    .concept-card.dark .concept-icon svg {
+      fill: var(--white);
+    }
+
+    .concept-heading {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 14px;
+      line-height: 1.35;
+    }
+
+    .concept-text {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--gray-dark);
+    }
+
+    .concept-card.dark .concept-text {
+      color: var(--accent-silver);
+    }
+
+    /* ==========================================================
+       Menu & Products Section
+       ========================================================== */
+    .menu-section {
+      padding: 110px 0;
+      background: #fafafc;
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .category-filter-wrap {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 54px;
+    }
+
+    .filter-btn {
+      padding: 10px 24px;
+      border-radius: var(--radius-full);
       font-size: 14px;
       font-weight: 700;
-      letter-spacing: .04em;
-      transition: transform .25s ease, background-color .25s ease, color .25s ease, border-color .25s ease;
+      letter-spacing: 0.03em;
+      border: 1px solid var(--border-light);
+      background: var(--white);
+      color: var(--gray-dark);
+      transition: all var(--transition-fast);
     }
-    .button:hover, .outline-link:hover { transform: translateY(-2px); }
-    .button--sand { color: var(--navy); background: var(--sand); }
-    .button--sand:hover { background: #f1cb8b; }
-    .button--dark { color: var(--navy); background: #fff; }
-    .outline-link { border-color: rgba(255,255,255,.72); color: #fff; }
-    .outline-link:hover { color: var(--navy); background: #fff; }
-    :focus-visible { outline: 3px solid var(--sky); outline-offset: 4px; }
 
-    /* Header & hero */
-    .site-header { position: absolute; z-index: 20; top: 0; left: 0; width: 100%; border-bottom: 1px solid rgba(255,255,255,.28); }
-    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-    .brand { display: inline-flex; align-items: center; gap: 11px; color: #fff; }
-    .brand-mark { width: 29px; height: 29px; display: grid; place-items: center; border: 1px solid var(--sky); border-radius: 50%; color: var(--sky); font: 700 16px/1 "Playfair Display", serif; }
-    .brand-copy { display: grid; line-height: 1.05; }
-    .brand-copy strong { font-size: 13px; letter-spacing: .08em; }
-    .brand-copy small { margin-top: 4px; font-size: 8px; letter-spacing: .18em; opacity: .7; }
-    .nav-links { display: flex; align-items: center; gap: clamp(16px, 2.4vw, 31px); }
-    .nav-links a { position: relative; color: #fff; font-size: 13px; font-weight: 500; white-space: nowrap; }
-    .nav-links a:not(.nav-cta)::after { position: absolute; right: 0; bottom: -5px; left: auto; width: 0; height: 1px; background: var(--sky); content: ""; transition: width .25s ease; }
-    .nav-links a:not(.nav-cta):hover::after { right: auto; left: 0; width: 100%; }
-    .nav-links .nav-cta { padding: 8px 13px; border: 1px solid rgba(255,255,255,.72); }
-    .nav-links .nav-cta:hover { color: var(--navy); background: #fff; }
-    .menu-toggle { display: none; width: 42px; height: 42px; border: 1px solid rgba(255,255,255,.7); color: #fff; background: transparent; font-size: 23px; line-height: 1; }
-
-    .hero { position: relative; min-height: 704px; overflow: hidden; color: #fff; background: var(--navy); isolation: isolate; }
-    .hero::before { position: absolute; z-index: -2; top: -320px; right: -210px; width: 810px; height: 810px; border-radius: 50%; background: radial-gradient(circle, rgba(117,198,232,.38), rgba(12,91,149,.18) 38%, transparent 69%); content: ""; }
-    .hero::after { position: absolute; z-index: -1; right: 12%; bottom: -430px; width: 780px; height: 780px; border: 1px solid rgba(117,198,232,.18); border-radius: 50%; box-shadow: 0 0 0 65px rgba(117,198,232,.035), 0 0 0 154px rgba(117,198,232,.025); content: ""; }
-    .hero-grid { min-height: 704px; display: grid; grid-template-columns: 1.02fr .98fr; gap: 45px; align-items: center; padding: 122px 0 72px; }
-    .hero-copy { position: relative; z-index: 2; }
-    .hero .eyebrow { color: var(--sky); }
-    .hero h1 { max-width: 650px; margin: 0 0 23px; font: 800 clamp(42px, 5.5vw, 68px)/1.22 "Noto Serif TC", serif; letter-spacing: .05em; }
-    .hero h1 span { color: var(--sky); }
-    .hero-lede { max-width: 500px; margin: 0; color: rgba(255,255,255,.79); font-size: 16px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 31px; }
-    .hero-note { margin: 31px 0 0; color: rgba(255,255,255,.55); font: 600 11px/1.5 "Playfair Display", serif; letter-spacing: .16em; }
-    .scroll-cue { position: absolute; bottom: 35px; left: 0; display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,.63); font-size: 10px; font-weight: 600; letter-spacing: .18em; }
-    .scroll-cue::before { width: 38px; height: 1px; background: var(--sky); content: ""; }
-
-    .hero-art { position: relative; align-self: stretch; min-height: 470px; overflow: hidden; }
-    .hero-art .sun { position: absolute; top: 52px; right: 54px; width: clamp(138px, 18vw, 200px); aspect-ratio: 1; border-radius: 50%; background: #b9e8f5; box-shadow: 0 0 0 27px rgba(117,198,232,.09), 0 0 0 59px rgba(117,198,232,.045); }
-    .mountain { position: absolute; right: -11%; bottom: 6px; width: 116%; height: 260px; transform: skewY(-9deg); transform-origin: right bottom; background: linear-gradient(146deg, transparent 0 27%, rgba(61,145,184,.36) 27.3% 48%, rgba(17,97,143,.77) 48.3%); clip-path: polygon(0 62%, 28% 20%, 44% 57%, 68% 4%, 100% 57%, 100% 100%, 0 100%); }
-    .mountain--back { right: 13%; bottom: 98px; width: 108%; height: 220px; opacity: .46; transform: skewY(-4deg); background: #2a81ae; clip-path: polygon(0 84%, 31% 30%, 45% 62%, 66% 9%, 100% 66%, 100% 100%, 0 100%); }
-    .horizon { position: absolute; right: -4%; bottom: 0; width: 116%; height: 112px; background: linear-gradient(90deg, rgba(7,45,75,.5), #0d5684); transform: skewY(-4deg); }
-    .coffee-vessel { position: absolute; z-index: 4; right: 18%; bottom: 36px; width: 192px; height: 274px; filter: drop-shadow(18px 22px 14px rgba(0,0,0,.22)); }
-    .vessel-neck { position: absolute; top: 0; left: 62px; width: 68px; height: 42px; border: 7px solid #b3e2ef; border-bottom: 0; border-radius: 50% 50% 0 0; background: rgba(6,39,66,.62); }
-    .vessel-body { position: absolute; top: 33px; left: 18px; width: 150px; height: 212px; border: 7px solid #b3e2ef; border-radius: 31% 31% 42% 42% / 12% 12% 37% 37%; background: linear-gradient(90deg, rgba(30,112,151,.9), rgba(5,35,60,.9) 45%, rgba(83,167,198,.8)); overflow: hidden; }
-    .vessel-body::before { position: absolute; top: 15px; left: 0; width: 100%; height: 5px; background: rgba(197,237,244,.8); box-shadow: 0 48px rgba(197,237,244,.25), 0 95px rgba(197,237,244,.18), 0 145px rgba(197,237,244,.13); content: ""; }
-    .vessel-body::after { position: absolute; top: 5px; left: 48%; width: 24px; height: 200px; border-radius: 50%; background: rgba(218,247,251,.17); content: ""; }
-    .vessel-handle { position: absolute; right: 0; bottom: 49px; width: 62px; height: 98px; border: 10px solid #a9dce9; border-left: 0; border-radius: 0 53px 53px 0; }
-    .art-label { position: absolute; z-index: 5; right: 0; bottom: 64px; display: grid; gap: 3px; color: rgba(255,255,255,.73); font-size: 11px; letter-spacing: .1em; text-align: right; }
-    .art-label strong { color: var(--sky); font: 700 22px/1 "Playfair Display", serif; }
-
-    /* Story */
-    .story { padding: 118px 0; background: #fff; }
-    .story-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(45px, 8vw, 105px); align-items: center; }
-    .story-visual { position: relative; min-height: 416px; }
-    .seal { position: absolute; top: 0; left: 0; width: 310px; height: 310px; display: grid; place-items: center; border: 1px solid #a8d2df; border-radius: 50%; color: var(--blue); background: radial-gradient(circle at 35% 30%, #fff 0, #eaf6f8 68%, #d9edf1 100%); }
-    .seal::before, .seal::after { position: absolute; border: 1px solid rgba(12,91,149,.25); border-radius: 50%; content: ""; }
-    .seal::before { inset: 17px; }
-    .seal::after { inset: 44px; border-style: dashed; }
-    .seal-inner { position: relative; z-index: 1; display: grid; gap: 7px; text-align: center; }
-    .seal-inner b { font: 700 42px/1 "Playfair Display", serif; }
-    .seal-inner span { font-size: 13px; font-weight: 700; letter-spacing: .1em; }
-    .seal-inner small { font: 600 9px/1.5 "Playfair Display", serif; letter-spacing: .15em; }
-    .blue-note { position: absolute; right: 0; bottom: 0; width: 235px; padding: 27px 28px; color: #fff; background: var(--navy); box-shadow: var(--shadow); }
-    .blue-note .eyebrow { margin-bottom: 9px; color: var(--sky); font-size: 9px; }
-    .blue-note p { margin: 0; font: 700 20px/1.55 "Noto Serif TC", serif; letter-spacing: .05em; }
-    .story-copy p { margin: 19px 0 0; color: var(--muted); }
-    .inline-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 24px; padding-bottom: 5px; border-bottom: 1px solid var(--blue); color: var(--blue); font-weight: 700; }
-    .inline-link:hover { color: var(--navy); }
-
-    /* Coffee collection */
-    .coffee { padding: 111px 0 120px; background: var(--mist); }
-    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 39px; }
-    .section-heading p { max-width: 370px; margin: 0; color: var(--muted); }
-    .coffee-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 19px; }
-    .coffee-card { position: relative; min-height: 384px; display: flex; flex-direction: column; overflow: hidden; padding: 30px; color: #fff; background: var(--navy); box-shadow: var(--shadow); }
-    .coffee-card:nth-child(2) { background: #106396; }
-    .coffee-card:nth-child(3) { background: #164c68; }
-    .coffee-card::after { position: absolute; right: -90px; bottom: -90px; width: 260px; height: 260px; border: 1px solid rgba(255,255,255,.24); border-radius: 50%; box-shadow: 0 0 0 27px rgba(255,255,255,.045), 0 0 0 65px rgba(255,255,255,.025); content: ""; }
-    .card-top, .coffee-card h3, .flavour, .card-footer { position: relative; z-index: 1; }
-    .card-top { color: var(--sky); font: 700 12px/1.3 "Playfair Display", serif; letter-spacing: .12em; }
-    .origin { margin: 25px 0 8px; color: rgba(255,255,255,.69); font-size: 10px; font-weight: 700; letter-spacing: .15em; }
-    .coffee-card h3 { margin: 0; font: 700 26px/1.38 "Noto Serif TC", serif; letter-spacing: .04em; }
-    .flavour { margin: 15px 0 0; color: rgba(255,255,255,.73); font-size: 14px; }
-    .card-footer { display: flex; align-items: end; justify-content: space-between; gap: 14px; margin-top: auto; }
-    .price { font: 700 15px/1.3 "Playfair Display", serif; letter-spacing: .04em; }
-    .save-coffee { padding: 0 0 5px; border: 0; border-bottom: 1px solid rgba(255,255,255,.72); color: #fff; background: transparent; font-size: 13px; font-weight: 700; white-space: nowrap; transition: color .2s, border-color .2s; }
-    .save-coffee:hover { border-color: var(--sand); color: var(--sand); }
-
-    /* Brew */
-    .brew { padding: 118px 0; background: #fff; }
-    .brew-grid { display: grid; grid-template-columns: .93fr 1.07fr; gap: clamp(42px, 8vw, 90px); align-items: center; }
-    .brew-art { position: relative; height: 414px; overflow: hidden; background: linear-gradient(136deg, #e3f4f7 0 48%, #f8fcfc 48% 100%); }
-    .brew-art::before { position: absolute; top: 37px; left: 35px; width: 68px; height: 41px; border-top: 1px solid #6cb4ce; border-bottom: 1px solid #6cb4ce; content: ""; }
-    .brew-art::after { position: absolute; top: 57px; left: 35px; width: 43px; border-top: 1px solid #6cb4ce; content: ""; }
-    .water-rings { position: absolute; top: 67px; left: 50%; width: 245px; height: 245px; border: 1px solid rgba(12,91,149,.27); border-radius: 50%; transform: translateX(-50%); box-shadow: 0 0 0 30px rgba(117,198,232,.12), 0 0 0 74px rgba(117,198,232,.065); }
-    .water-rings::before { position: absolute; top: 18px; left: 50%; width: 1px; height: 58px; background: #6bb8d1; content: ""; transform: translateX(-50%); }
-    .dripper { position: absolute; z-index: 2; top: 134px; left: 50%; width: 147px; height: 151px; border: 7px solid var(--blue); border-top: 0; background: linear-gradient(130deg, rgba(255,255,255,.85), rgba(117,198,232,.25)); clip-path: polygon(0 0, 100% 0, 74% 100%, 26% 100%); transform: translateX(-50%); }
-    .dripper::after { position: absolute; right: 32px; bottom: 19px; left: 32px; height: 33px; border-top: 2px solid rgba(12,91,149,.55); border-bottom: 2px solid rgba(12,91,149,.35); content: ""; }
-    .carafe { position: absolute; z-index: 1; bottom: 56px; left: 50%; width: 139px; height: 106px; border: 6px solid var(--blue); border-radius: 16px 16px 45% 45%; background: rgba(117,198,232,.23); transform: translateX(-50%); }
-    .carafe::before { position: absolute; top: -28px; left: 29px; width: 70px; height: 28px; border: 6px solid var(--blue); border-bottom: 0; border-radius: 50% 50% 0 0; content: ""; }
-    .brew-caption { position: absolute; right: 24px; bottom: 19px; color: var(--blue); text-align: right; }
-    .brew-caption span { display: block; font: 700 11px/1.5 "Playfair Display", serif; letter-spacing: .12em; }
-    .brew-caption strong { font: 700 24px/1.1 "Playfair Display", serif; }
-    .brew-copy > p { margin: 18px 0 25px; color: var(--muted); }
-    .brew-steps { border-top: 1px solid var(--line); }
-    .brew-step { display: grid; grid-template-columns: 52px 1fr; gap: 15px; padding: 18px 0; border-bottom: 1px solid var(--line); }
-    .step-number { color: var(--blue); font: 700 24px/1 "Playfair Display", serif; }
-    .brew-step h3 { margin: 0; font: 700 16px/1.5 "Noto Serif TC", serif; }
-    .brew-step p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
-
-    /* Subscribe and footer */
-    .visit { position: relative; overflow: hidden; padding: 108px 0 113px; color: #fff; text-align: center; background: var(--navy); }
-    .visit::before, .visit::after { position: absolute; width: 390px; height: 390px; border: 1px solid rgba(117,198,232,.17); border-radius: 50%; content: ""; }
-    .visit::before { top: -245px; left: -153px; box-shadow: 0 0 0 45px rgba(117,198,232,.035); }
-    .visit::after { right: -170px; bottom: -260px; box-shadow: 0 0 0 50px rgba(117,198,232,.035); }
-    .visit .wrap { position: relative; z-index: 1; max-width: 715px; }
-    .visit .eyebrow { justify-content: center; color: var(--sky); }
-    .visit h2 { margin: 0; font: 800 clamp(30px, 4vw, 46px)/1.3 "Noto Serif TC", serif; letter-spacing: .045em; }
-    .visit p { max-width: 510px; margin: 19px auto 29px; color: rgba(255,255,255,.72); }
-    .subscribe-form { display: flex; min-height: 58px; border: 1px solid rgba(255,255,255,.62); }
-    .subscribe-form input { min-width: 0; flex: 1; padding: 0 18px; border: 0; color: #fff; outline: none; background: transparent; }
-    .subscribe-form input::placeholder { color: rgba(255,255,255,.56); }
-    .subscribe-form button { padding: 0 23px; border: 0; color: var(--navy); background: var(--sand); font-size: 14px; font-weight: 700; white-space: nowrap; transition: background .2s; }
-    .subscribe-form button:hover { background: #f1cb8b; }
-    .site-footer { padding: 66px 0 23px; color: rgba(255,255,255,.68); background: #031c31; }
-    .footer-grid { display: grid; grid-template-columns: 1.45fr .8fr 1fr; gap: 55px; padding-bottom: 48px; }
-    .footer-brand .brand { margin-bottom: 16px; }
-    .footer-brand p { max-width: 330px; margin: 0; font-size: 14px; }
-    .footer-title { margin: 0 0 14px; color: var(--sky); font-size: 11px; font-weight: 700; letter-spacing: .18em; }
-    .footer-links { display: grid; gap: 8px; font-size: 14px; }
-    .footer-links a:hover { color: var(--sky); }
-    .footer-links address { font-style: normal; }
-    .footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.17); color: rgba(255,255,255,.44); font: 600 10px/1.5 "Playfair Display", serif; letter-spacing: .1em; }
-
-    .toast { position: fixed; z-index: 50; right: 22px; bottom: 22px; max-width: min(370px, calc(100vw - 44px)); padding: 14px 18px; border-left: 3px solid var(--sand); color: #fff; background: var(--navy); box-shadow: var(--shadow); font-size: 14px; opacity: 0; pointer-events: none; transform: translateY(12px); transition: opacity .25s ease, transform .25s ease; }
-    .toast.show { opacity: 1; transform: translateY(0); }
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    @media (max-width: 820px) {
-      .menu-toggle { display: grid; place-items: center; }
-      .nav { position: relative; }
-      .nav-links { position: absolute; top: 78px; right: -24px; left: -24px; max-height: 0; display: grid; gap: 0; overflow: hidden; background: #05233c; transition: max-height .35s ease; }
-      .nav-links.open { max-height: 300px; border-top: 1px solid rgba(255,255,255,.16); }
-      .nav-links a { display: block; padding: 13px 24px; }
-      .nav-links .nav-cta { margin: 5px 24px 15px; padding: 10px 13px; text-align: center; }
-      .hero { min-height: 710px; }
-      .hero-grid { min-height: 710px; grid-template-columns: 1fr; gap: 0; padding: 118px 0 43px; }
-      .hero-art { min-height: 276px; margin-top: -9px; }
-      .hero-art .sun { top: 19px; right: 20%; width: 130px; }
-      .mountain { height: 180px; }
-      .mountain--back { bottom: 69px; height: 150px; }
-      .coffee-vessel { right: 17%; bottom: -12px; transform: scale(.72); transform-origin: bottom right; }
-      .art-label { display: none; }
-      .scroll-cue { display: none; }
-      .story-grid, .brew-grid { grid-template-columns: 1fr; }
-      .story-visual { max-width: 525px; width: 100%; min-height: 400px; }
-      .coffee-grid { grid-template-columns: repeat(2, 1fr); }
-      .coffee-card:nth-child(3) { grid-column: span 2; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-      .footer-brand { grid-column: 1 / -1; }
+    .filter-btn:hover {
+      border-color: var(--black);
+      color: var(--black);
     }
-    @media (max-width: 560px) {
-      .wrap { width: calc(100% - 34px); }
-      .nav-links { right: -17px; left: -17px; }
-      .hero { min-height: 680px; }
-      .hero-grid { min-height: 680px; padding-top: 106px; }
-      .hero h1 { font-size: 40px; }
-      .hero-lede { font-size: 14px; }
-      .hero-actions { gap: 9px; margin-top: 24px; }
-      .hero-actions .button, .hero-actions .outline-link { min-height: 46px; padding: 8px 15px; font-size: 13px; }
-      .hero-note { margin-top: 21px; }
-      .hero-art { min-height: 219px; }
-      .hero-art .sun { width: 92px; }
-      .coffee-vessel { right: 5%; bottom: -48px; transform: scale(.57); }
-      .story, .coffee, .brew { padding: 76px 0; }
-      .seal { width: 245px; height: 245px; }
-      .seal-inner b { font-size: 35px; }
-      .story-visual { min-height: 347px; }
-      .blue-note { width: 185px; padding: 20px; }
-      .blue-note p { font-size: 16px; }
-      .section-heading { display: block; margin-bottom: 28px; }
-      .section-heading p { margin-top: 14px; font-size: 14px; }
-      .coffee-grid { grid-template-columns: 1fr; }
-      .coffee-card, .coffee-card:nth-child(3) { min-height: 330px; grid-column: auto; }
-      .coffee-card { padding: 25px; }
-      .brew-art { height: 310px; }
-      .water-rings { top: 45px; width: 178px; height: 178px; box-shadow: 0 0 0 23px rgba(117,198,232,.12), 0 0 0 53px rgba(117,198,232,.065); }
-      .dripper { top: 95px; transform: translateX(-50%) scale(.75); }
-      .carafe { bottom: 37px; transform: translateX(-50%) scale(.75); }
-      .visit { padding: 76px 0; }
-      .subscribe-form { display: grid; gap: 0; border: 0; }
-      .subscribe-form input { min-height: 54px; border: 1px solid rgba(255,255,255,.62); }
-      .subscribe-form button { min-height: 54px; margin-top: 10px; }
-      .footer-grid { grid-template-columns: 1fr; gap: 33px; }
-      .footer-brand { grid-column: auto; }
-      .footer-bottom { display: grid; gap: 8px; }
+
+    .filter-btn.active {
+      background: var(--black);
+      color: var(--white);
+      border-color: var(--black);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
     }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .product-card {
+      background: var(--white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all var(--transition-smooth);
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: #c8c8d0;
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      z-index: 5;
+      background: var(--black);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+    }
+
+    .product-image-box {
+      height: 250px;
+      background: linear-gradient(135deg, #f7f7f9 0%, #ebebef 100%);
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 24px;
+    }
+
+    .product-image-box.dark-bg {
+      background: linear-gradient(135deg, #18181b 0%, #09090b 100%);
+    }
+
+    .product-svg-art {
+      width: 170px;
+      height: 170px;
+      filter: drop-shadow(0 14px 20px rgba(0, 0, 0, 0.12));
+      transition: transform var(--transition-smooth);
+    }
+
+    .product-card:hover .product-svg-art {
+      transform: scale(1.08) rotate(-1deg);
+    }
+
+    .product-body {
+      padding: 28px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-meta-tags {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .meta-tag {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--gray-mid);
+      letter-spacing: 0.04em;
+    }
+
+    .product-title {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+      color: var(--black);
+    }
+
+    .product-desc {
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--gray-dark);
+      margin-bottom: 18px;
+      min-height: 42px;
+    }
+
+    .flavor-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .flavor-pill {
+      font-size: 11px;
+      background: var(--gray-bg);
+      border: 1px solid var(--border-light);
+      padding: 3px 9px;
+      border-radius: var(--radius-sm);
+      color: var(--black);
+      font-weight: 500;
+    }
+
+    .size-selector-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      padding: 8px 12px;
+      background: #fafafc;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-light);
+    }
+
+    .size-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gray-dark);
+    }
+
+    .size-btn-group {
+      display: flex;
+      gap: 6px;
+    }
+
+    .size-chip {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-light);
+      background: var(--white);
+      color: var(--black);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .size-chip.selected {
+      background: var(--black);
+      color: var(--white);
+      border-color: var(--black);
+    }
+
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 18px;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .product-price-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .price-currency {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gray-mid);
+    }
+
+    .price-amount {
+      font-size: 22px;
+      font-weight: 900;
+      font-family: "Cinzel", serif;
+      letter-spacing: -0.02em;
+      color: var(--black);
+    }
+
+    .product-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn-quick-view {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-light);
+      display: grid;
+      place-items: center;
+      color: var(--black);
+      transition: all var(--transition-fast);
+    }
+
+    .btn-quick-view:hover {
+      background: var(--black);
+      color: var(--white);
+      border-color: var(--black);
+    }
+
+    .btn-add-cart {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--black);
+      color: var(--white);
+      padding: 10px 18px;
+      border-radius: var(--radius-full);
+      font-size: 13px;
+      font-weight: 700;
+      transition: all var(--transition-smooth);
+    }
+
+    .btn-add-cart:hover {
+      background: #25252c;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    }
+
+    /* ==========================================================
+       Ingredients & Quality Standards
+       ========================================================== */
+    .ingredients-section {
+      padding: 110px 0;
+      background: var(--black);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ingredients-section::after {
+      content: "";
+      position: absolute;
+      bottom: -150px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 300px;
+      background: radial-gradient(ellipse, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .ingredients-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+    }
+
+    .ingredient-item {
+      background: var(--black-card);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-lg);
+      padding: 32px 24px;
+      text-align: center;
+      transition: all var(--transition-smooth);
+    }
+
+    .ingredient-item:hover {
+      border-color: rgba(255, 255, 255, 0.4);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .ingredient-icon-box {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: var(--charcoal);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      display: grid;
+      place-items: center;
+    }
+
+    .ingredient-icon-box svg {
+      width: 28px;
+      height: 28px;
+      fill: var(--white);
+    }
+
+    .ingredient-name {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .ingredient-origin {
+      font-size: 11px;
+      color: var(--accent-silver);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .ingredient-desc {
+      font-size: 13px;
+      color: #a4a4b0;
+      line-height: 1.6;
+    }
+
+    /* ==========================================================
+       Social Proof & Reviews
+       ========================================================== */
+    .reviews-section {
+      padding: 110px 0;
+      background: var(--white);
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .review-card {
+      background: var(--gray-bg);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 36px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all var(--transition-smooth);
+    }
+
+    .review-card:hover {
+      background: var(--white);
+      border-color: var(--black);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .review-stars {
+      display: flex;
+      gap: 4px;
+      color: var(--black);
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+
+    .review-quote {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--black);
+      font-weight: 500;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .review-user-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border-top: 1px solid var(--border-light);
+      padding-top: 18px;
+    }
+
+    .user-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--black);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .user-info-text strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .user-info-text span {
+      font-size: 12px;
+      color: var(--gray-mid);
+    }
+
+    /* ==========================================================
+       Promo Banner
+       ========================================================== */
+    .promo-banner-section {
+      padding: 40px 0;
+      background: var(--black);
+      color: var(--white);
+      border-top: 1px solid var(--border-dark);
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .promo-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+      background: linear-gradient(90deg, #141417 0%, #1c1c22 100%);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-lg);
+      padding: 36px 44px;
+    }
+
+    .promo-info h3 {
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+
+    .promo-info p {
+      font-size: 15px;
+      color: var(--accent-silver);
+    }
+
+    .promo-code-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px dashed rgba(255, 255, 255, 0.35);
+      border-radius: var(--radius-full);
+      padding: 8px 10px 8px 22px;
+    }
+
+    .promo-code-text {
+      font-family: "Cinzel", monospace;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+    }
+
+    .btn-copy-code {
+      background: var(--white);
+      color: var(--black);
+      padding: 8px 18px;
+      border-radius: var(--radius-full);
+      font-size: 13px;
+      font-weight: 800;
+      transition: all var(--transition-fast);
+    }
+
+    .btn-copy-code:hover {
+      background: #e2e2e8;
+    }
+
+    /* ==========================================================
+       FAQ & Ordering Info
+       ========================================================== */
+    .faq-section {
+      padding: 110px 0;
+      background: var(--gray-bg);
+    }
+
+    .faq-container {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .faq-accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: all var(--transition-fast);
+    }
+
+    .faq-item.open {
+      border-color: var(--black);
+    }
+
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 22px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--black);
+      cursor: pointer;
+    }
+
+    .faq-icon-arrow {
+      font-size: 18px;
+      transition: transform var(--transition-smooth);
+    }
+
+    .faq-item.open .faq-icon-arrow {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height var(--transition-smooth), padding var(--transition-smooth);
+      padding: 0 28px;
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--gray-dark);
+      border-top: 0 solid var(--border-light);
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 200px;
+      padding: 0 28px 22px;
+      border-top: 1px solid var(--border-light);
+    }
+
+    /* ==========================================================
+       Newsletter Subscription
+       ========================================================== */
+    .newsletter-section {
+      padding: 100px 0;
+      background: var(--black);
+      color: var(--white);
+      text-align: center;
+      position: relative;
+    }
+
+    .newsletter-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .newsletter-title {
+      font-size: 32px;
+      font-weight: 900;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .newsletter-subtitle {
+      font-size: 15px;
+      color: var(--accent-silver);
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: var(--radius-full);
+      padding: 6px 8px 6px 24px;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: var(--white);
+      font-size: 14px;
+      outline: none;
+    }
+
+    .newsletter-input::placeholder {
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    .newsletter-btn {
+      background: var(--white);
+      color: var(--black);
+      border: none;
+      padding: 12px 28px;
+      border-radius: var(--radius-full);
+      font-size: 14px;
+      font-weight: 800;
+      transition: all var(--transition-fast);
+    }
+
+    .newsletter-btn:hover {
+      background: #e2e2e8;
+      transform: scale(1.02);
+    }
+
+    /* ==========================================================
+       Footer (遵循規格：光復南路 101 號)
+       ========================================================== */
+    .site-footer {
+      background: #050507;
+      color: var(--white);
+      padding: 80px 0 32px;
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 48px;
+      margin-bottom: 60px;
+    }
+
+    .footer-brand-col p {
+      font-size: 14px;
+      color: var(--accent-silver);
+      line-height: 1.8;
+      max-width: 320px;
+      margin-top: 18px;
+    }
+
+    .footer-col-title {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      font-size: 14px;
+      color: var(--accent-silver);
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    .footer-contact-info {
+      font-size: 14px;
+      color: var(--accent-silver);
+      line-height: 1.8;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-dark);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 12px;
+      color: #6d6d7a;
+    }
+
+    /* ==========================================================
+       Cart Drawer (側邊購物車抽屜)
+       ========================================================== */
+    .cart-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all var(--transition-smooth);
+    }
+
+    .cart-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: min(440px, 100%);
+      height: 100%;
+      background: var(--white);
+      z-index: 1001;
+      transform: translateX(100%);
+      transition: transform var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      box-shadow: -10px 0 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .cart-overlay.open .cart-drawer {
+      transform: translateX(0);
+    }
+
+    .cart-header {
+      padding: 24px;
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart-header h3 {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    .btn-close-cart {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid var(--border-light);
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+    }
+
+    .btn-close-cart:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .shipping-bar-box {
+      padding: 12px 24px;
+      background: #f7f7f9;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 12px;
+    }
+
+    .shipping-bar-text {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 6px;
+      background: #e4e4e9;
+      border-radius: var(--radius-full);
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--black);
+      width: 0%;
+      transition: width var(--transition-smooth);
+    }
+
+    .cart-items-list {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: 70px 1fr auto;
+      gap: 16px;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .cart-item-img {
+      width: 70px;
+      height: 70px;
+      background: var(--gray-bg);
+      border-radius: var(--radius-md);
+      display: grid;
+      place-items: center;
+      padding: 8px;
+    }
+
+    .cart-item-info h4 {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .cart-item-spec {
+      font-size: 12px;
+      color: var(--gray-mid);
+      margin-bottom: 8px;
+    }
+
+    .cart-qty-ctrl {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      width: fit-content;
+    }
+
+    .cart-qty-ctrl button {
+      width: 26px;
+      height: 26px;
+      display: grid;
+      place-items: center;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .cart-qty-ctrl span {
+      width: 30px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .cart-item-price {
+      font-weight: 800;
+      font-family: "Cinzel", serif;
+      font-size: 15px;
+      text-align: right;
+    }
+
+    .cart-item-remove {
+      font-size: 11px;
+      color: #999;
+      cursor: pointer;
+      margin-top: 6px;
+      text-decoration: underline;
+    }
+
+    .cart-empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--gray-mid);
+    }
+
+    .cart-empty-state svg {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 16px;
+      opacity: 0.3;
+    }
+
+    .cart-footer {
+      padding: 24px;
+      border-top: 1px solid var(--border-light);
+      background: #fafafc;
+    }
+
+    .cart-total-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .cart-total-price {
+      font-size: 24px;
+      font-family: "Cinzel", serif;
+      font-weight: 900;
+    }
+
+    .btn-checkout {
+      width: 100%;
+      background: var(--black);
+      color: var(--white);
+      padding: 16px;
+      border-radius: var(--radius-full);
+      font-size: 15px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn-checkout:hover {
+      background: #25252c;
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================
+       Checkout & Order Modal
+       ========================================================== */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+      z-index: 1100;
+      opacity: 0;
+      visibility: hidden;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      transition: all var(--transition-smooth);
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-dialog {
+      background: var(--white);
+      width: min(600px, 100%);
+      max-height: 90vh;
+      border-radius: var(--radius-lg);
+      overflow-y: auto;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+      position: relative;
+    }
+
+    .modal-header {
+      padding: 24px 28px;
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      background: var(--white);
+      z-index: 10;
+    }
+
+    .modal-header h3 {
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .btn-close-modal {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid var(--border-light);
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+    }
+
+    .modal-body {
+      padding: 28px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--black);
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-light);
+      background: var(--white);
+      color: var(--black);
+      outline: none;
+      transition: border-color var(--transition-fast);
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--black);
+    }
+
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .payment-options-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .payment-option-label {
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .payment-option-label input {
+      display: none;
+    }
+
+    .payment-option-label:has(input:checked) {
+      border-color: var(--black);
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .btn-submit-order {
+      width: 100%;
+      background: var(--black);
+      color: var(--white);
+      padding: 16px;
+      border-radius: var(--radius-full);
+      font-size: 16px;
+      font-weight: 800;
+      margin-top: 12px;
+    }
+
+    .btn-submit-order:hover {
+      background: #25252c;
+    }
+
+    /* ==========================================================
+       Product Detail Quick-View Modal
+       ========================================================== */
+    .quick-view-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .quick-view-img {
+      background: var(--gray-bg);
+      border-radius: var(--radius-md);
+      padding: 30px;
+      display: grid;
+      place-items: center;
+    }
+
+    /* Toast Notification */
+    .toast-container {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 2000;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      pointer-events: none;
+    }
+
+    .toast-card {
+      background: var(--black);
+      color: var(--white);
+      padding: 14px 22px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--border-dark);
+      transform: translateY(20px);
+      opacity: 0;
+      transition: all var(--transition-smooth);
+      pointer-events: auto;
+    }
+
+    .toast-card.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Mobile Menu Drawer */
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--white);
+      z-index: 990;
+      padding: 80px 28px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transform: translateY(-100%);
+      transition: transform var(--transition-smooth);
+    }
+
+    .mobile-drawer.open {
+      transform: translateY(0);
+    }
+
+    .mobile-nav-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .mobile-nav-links a {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--black);
+    }
+
+    /* ==========================================================
+       Responsive Media Queries
+       ========================================================== */
+    @media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .hero-visual-card {
+        max-width: 480px;
+        margin: 0 auto;
+      }
+      .concept-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .ingredients-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links, .btn-header-cta {
+        display: none;
+      }
+      .mobile-menu-toggle {
+        display: grid;
+      }
+      .hero-section {
+        padding: 50px 0 80px;
+      }
+      .hero-title {
+        font-size: 36px;
+      }
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+      .ingredients-grid {
+        grid-template-columns: 1fr;
+      }
+      .promo-card {
+        padding: 28px 24px;
+      }
+      .quick-view-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .form-grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
-      .reveal { opacity: 1; transform: none; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
     }
   </style>
 </head>
 <body>
-  <header class="site-header" id="top">
-    <nav class="nav wrap" aria-label="主要導覽">
-      <a class="brand" href="#top" aria-label="回到藍天咖啡首頁">
-        <span class="brand-mark" aria-hidden="true">B</span>
-        <span class="brand-copy"><strong>藍天咖啡</strong><small>BLUE SKY COFFEE</small></span>
+
+  <!-- 頂部特惠通知列 -->
+  <div class="top-bar">
+    <span><strong>NEW</strong> 首次預約「蛋糕星球」手作蛋糕，享 9 折迎新優惠碼：PLANET90</span>
+  </div>
+
+  <!-- 網站主導覽列 -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <!-- 品牌 Logo (遵循 onepage.md 規格：粗體 750) -->
+      <a href="#hero" class="brand" aria-label="蛋糕星球 首頁">
+        <div class="planet-logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="5" fill="#fff"/>
+            <ellipse cx="12" cy="12" rx="10" ry="3.5" stroke="#fff" stroke-width="1.8" fill="none" transform="rotate(-20 12 12)"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span>蛋糕星球</span>
+          <span>CAKE PLANET</span>
+        </div>
       </a>
-      <button class="menu-toggle" type="button" aria-controls="navLinks" aria-expanded="false" aria-label="開啟導覽選單">☰</button>
-      <div class="nav-links" id="navLinks">
-        <a href="#story">我們的故事</a>
-        <a href="#coffee">本季選豆</a>
-        <a href="#brew">沖煮日常</a>
-        <a class="nav-cta" href="#visit">訂閱風味通信</a>
+
+      <!-- 導覽選單 -->
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#concept">品牌美學</a></li>
+          <li><a href="#menu">星球手作</a></li>
+          <li><a href="#ingredients">嚴選食材</a></li>
+          <li><a href="#reviews">青年口碑</a></li>
+          <li><a href="#faq">訂購須知</a></li>
+        </ul>
+      </nav>
+
+      <!-- 導覽右側操作按鈕 -->
+      <div class="nav-actions">
+        <!-- 購物車按鈕 -->
+        <button class="cart-trigger-btn" id="openCartBtn" aria-label="查看購物車">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge" id="cartCountBadge">0</span>
+        </button>
+
+        <a href="#menu" class="btn-header-cta">立即挑選蛋糕</a>
+
+        <!-- 手機漢堡選單按鈕 -->
+        <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="切換選單">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
       </div>
-    </nav>
+    </div>
   </header>
 
+  <!-- 手機全螢幕選單抽屜 -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <ul class="mobile-nav-links">
+      <li><a href="#concept" class="mobile-link">01 品牌美學</a></li>
+      <li><a href="#menu" class="mobile-link">02 星球手作</a></li>
+      <li><a href="#ingredients" class="mobile-link">03 嚴選食材</a></li>
+      <li><a href="#reviews" class="mobile-link">04 青年口碑</a></li>
+      <li><a href="#faq" class="mobile-link">05 訂購須知</a></li>
+    </ul>
+    <div style="padding-top: 20px;">
+      <a href="#menu" class="btn-primary mobile-link" style="width: 100%; text-align: center;">探索當季手作蛋糕</a>
+    </div>
+  </div>
+
   <main>
-    <section class="hero" aria-labelledby="heroTitle">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">HAND BREWED · SLOWLY ROASTED</p>
-          <h1 id="heroTitle">讓風味，在<span>藍天</span>下慢慢抵達。</h1>
-          <p class="hero-lede">藍天咖啡為喜歡手沖的您，挑選值得細品的單一產區咖啡豆。從第一縷花香，到最後一口回甘，每一杯都有屬於自己的晴朗天氣。</p>
-          <div class="hero-actions">
-            <a class="button button--sand" href="#coffee">探索本季咖啡豆 →</a>
-            <a class="outline-link" href="#story">認識藍天</a>
+    <!-- ========================================================
+         HERO SECTION: 首頁視覺區 (純粹黑白、吸睛號召)
+         遵循 onepage.md 規格：
+         - 次按鈕為「品牌的哲學」
+         - 信任指標為「純手工製作新鮮慢烤」
+         ======================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <!-- 左側文案與號召 -->
+        <div class="hero-content-col">
+          <div class="hero-eyebrow">
+            <span class="hero-eyebrow-dot"></span>
+            HANDCRAFTED ARTISAN CAKES
           </div>
-          <p class="hero-note">TAIPEI · TAIWAN · EST. 2025</p>
-          <span class="scroll-cue">SCROLL TO DISCOVER</span>
-        </div>
-        <div class="hero-art" aria-hidden="true">
-          <div class="sun"></div>
-          <div class="mountain mountain--back"></div>
-          <div class="mountain"></div>
-          <div class="horizon"></div>
-          <div class="coffee-vessel"><div class="vessel-neck"></div><div class="vessel-body"></div><div class="vessel-handle"></div></div>
-          <div class="art-label"><strong>92°C</strong><span>理想水溫</span><span>細細喚醒香氣</span></div>
-        </div>
-      </div>
-    </section>
 
-    <section class="story" id="story" aria-labelledby="storyTitle">
-      <div class="wrap story-grid">
-        <div class="story-visual reveal" aria-hidden="true">
-          <div class="seal"><div class="seal-inner"><b>B</b><span>慢一點，更清楚。</span><small>LET THE FLAVOUR SPEAK</small></div></div>
-          <aside class="blue-note"><p class="eyebrow">BLUE SKY NOTE</p><p>一杯好咖啡，從來不是匆忙完成的事。</p></aside>
-        </div>
-        <div class="story-copy reveal">
-          <p class="eyebrow">OUR PHILOSOPHY</p>
-          <h2 class="section-title" id="storyTitle">在一杯之間，看見產地的<span class="text-blue">晴朗</span>。</h2>
-          <p>我們相信，精品咖啡的美好不該被複雜掩蓋。以小批次烘焙留住豆子的個性，再用穩定、誠實的手沖，讓風土與時間在杯中變得清晰。</p>
-          <p>給懂得放慢腳步的人，也給每一個想重新認識咖啡的人。</p>
-          <a class="inline-link" href="#brew">看看我們如何沖煮 <span aria-hidden="true">→</span></a>
-        </div>
-      </div>
-    </section>
+          <h1 class="hero-title">
+            在黑白極簡中，<br>
+            探索<span class="highlight-box">手工蛋糕</span>的<br>
+            純粹宇宙。
+          </h1>
 
-    <section class="coffee" id="coffee" aria-labelledby="coffeeTitle">
-      <div class="wrap">
-        <div class="section-heading reveal">
-          <div><p class="eyebrow">SEASONAL SELECTION</p><h2 class="section-title" id="coffeeTitle">今天，想喝哪一片<span class="text-blue">藍天</span>？</h2></div>
-          <p>三款當季單品，為不同的晨光、午後與靜夜而選。</p>
-        </div>
-        <div class="coffee-grid">
-          <article class="coffee-card reveal">
-            <div class="card-top">01 / BRIGHT</div><p class="origin">ETHIOPIA · YIRGACHEFFE</p><h3>衣索比亞・耶加雪菲</h3><p class="flavour">白花、佛手柑、蜂蜜</p>
-            <div class="card-footer"><span class="price">NT$ 520 / 200g</span><button class="save-coffee" type="button" data-coffee="衣索比亞・耶加雪菲">加入收藏 ＋</button></div>
-          </article>
-          <article class="coffee-card reveal">
-            <div class="card-top">02 / JUICY</div><p class="origin">KENYA · KIRINYAGA</p><h3>肯亞・祈安布</h3><p class="flavour">黑醋栗、洛神、葡萄柚</p>
-            <div class="card-footer"><span class="price">NT$ 580 / 200g</span><button class="save-coffee" type="button" data-coffee="肯亞・祈安布">加入收藏 ＋</button></div>
-          </article>
-          <article class="coffee-card reveal">
-            <div class="card-top">03 / ROUND</div><p class="origin">COLOMBIA · HUILA</p><h3>哥倫比亞・慧蘭</h3><p class="flavour">黃桃、焦糖、可可尾韻</p>
-            <div class="card-footer"><span class="price">NT$ 460 / 200g</span><button class="save-coffee" type="button" data-coffee="哥倫比亞・慧蘭">加入收藏 ＋</button></div>
-          </article>
-        </div>
-      </div>
-    </section>
+          <p class="hero-desc">
+            蛋糕星球專為追求生活品味的年輕世代量身打造。我們揚棄冗贅的人工色素與過度裝飾，以純粹黑白美學、日本特級小麥與減糖黃金比例，還原手作甜點最純淨細膩的靈魂溫度。
+          </p>
 
-    <section class="brew" id="brew" aria-labelledby="brewTitle">
-      <div class="wrap brew-grid">
-        <div class="brew-art reveal" aria-hidden="true"><div class="water-rings"></div><div class="dripper"></div><div class="carafe"></div><div class="brew-caption"><span>V60 / 15G : 240ML</span><strong>2'45''</strong></div></div>
-        <div class="brew-copy reveal">
-          <p class="eyebrow">A QUIET RITUAL</p>
-          <h2 class="section-title" id="brewTitle">把時間交給水，讓咖啡說<span class="text-blue">自己的話</span>。</h2>
-          <p>不需要繁複儀式，只要三個安靜的步驟。每一個參數，都是為了讓你更靠近豆子原本的樣子。</p>
-          <div class="brew-steps">
-            <div class="brew-step"><span class="step-number">01</span><div><h3>研磨，先聞見期待</h3><p>15g 中細研磨，讓香氣從指尖開始展開。</p></div></div>
-            <div class="brew-step"><span class="step-number">02</span><div><h3>悶蒸，等待第一個呼吸</h3><p>以 92°C 熱水浸潤 30 秒，喚醒甜感與層次。</p></div></div>
-            <div class="brew-step"><span class="step-number">03</span><div><h3>注水，保持自己的節奏</h3><p>穩定畫圈，讓 240ml 的清澈在 2 分 45 秒完成。</p></div></div>
+          <div class="hero-action-group">
+            <a href="#menu" class="btn-primary">
+              探索星球系列
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <!-- 依據 onepage.md 規格修改：次按鈕「品牌的哲學」 -->
+            <a href="#concept" class="btn-outline">品牌的哲學</a>
+          </div>
+
+          <!-- 信任指標 (依據 onepage.md 規格修改：純手工製作新鮮慢烤) -->
+          <div class="hero-trust-bar">
+            <div class="trust-stat-item">
+              <span class="trust-stat-num">100%</span>
+              <span class="trust-stat-label">純手工製作新鮮慢烤</span>
+            </div>
+            <div class="trust-stat-item">
+              <span class="trust-stat-num">35%↓</span>
+              <span class="trust-stat-label">減糖配方・輕盈無負擔</span>
+            </div>
+            <div class="trust-stat-item">
+              <span class="trust-stat-num">4.9★</span>
+              <span class="trust-stat-label">社群年輕世代高分推薦</span>
+            </div>
           </div>
         </div>
+
+        <!-- 右側視覺卡片：星軌與主打蛋糕展示 -->
+        <div class="hero-visual-card">
+          <div class="hero-tag-badge">SEASONAL SIGNATURE · 01</div>
+          
+          <div class="hero-orbit-stage">
+            <div class="orbit-ring-outer"></div>
+            <div class="orbit-ring-inner"></div>
+            <div class="orbit-mini-planet"></div>
+            
+            <svg class="cake-hero-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="cakeGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+                  <stop offset="100%" stop-color="#d4d4d8" stop-opacity="0.4"/>
+                </radialGradient>
+              </defs>
+              <ellipse cx="100" cy="155" rx="72" ry="16" fill="#26262e"/>
+              <ellipse cx="100" cy="152" rx="68" ry="14" fill="#3a3a44"/>
+              
+              <path d="M42 110 C42 95 158 95 158 110 L158 138 C158 152 42 152 42 138 Z" fill="#141416"/>
+              <path d="M42 122 C42 114 158 114 158 122 L158 127 C158 135 42 135 42 127 Z" fill="#f4f4f6"/>
+              
+              <ellipse cx="100" cy="108" rx="58" ry="20" fill="url(#cakeGlow)"/>
+              
+              <circle cx="100" cy="104" r="14" fill="#0a0a0c"/>
+              <ellipse cx="100" cy="104" rx="28" ry="7" stroke="#0a0a0c" stroke-width="2.5" fill="none" transform="rotate(-15 100 104)"/>
+              <circle cx="82" cy="100" r="3" fill="#0a0a0c"/>
+              <circle cx="120" cy="107" r="2.5" fill="#0a0a0c"/>
+              <circle cx="98" cy="92" r="2" fill="#0a0a0c"/>
+            </svg>
+          </div>
+
+          <div class="hero-cake-details">
+            <h3 class="hero-cake-name">曜黑星環・生巧克力慕斯</h3>
+            <p class="hero-cake-specs">72% 法國法芙娜黑巧 · 日本紫羅蘭麵粉 · 6 吋</p>
+            
+            <div class="hero-cake-footer">
+              <span class="hero-price">NT$ 720</span>
+              <button class="hero-quick-btn" onclick="quickAddToCart('曜黑星環・生巧克力慕斯', 720, '6吋', '經典黑白')">
+                立即預訂 ＋
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="visit" id="visit" aria-labelledby="visitTitle">
-      <div class="wrap reveal">
-        <p class="eyebrow">THE BLUE SKY LETTER</p>
-        <h2 id="visitTitle">把下一杯好咖啡，寄到你的日常裡。</h2>
-        <p>每月一封風味通信，分享新豆、沖煮靈感與只給會員的小小驚喜。</p>
-        <form class="subscribe-form" id="subscribeForm">
-          <input type="email" aria-label="電子郵件地址" placeholder="your@email.com" required>
-          <button type="submit">訂閱風味通信</button>
+    <!-- ========================================================
+         BRAND CONCEPT: 簡約與精緻品牌哲學
+         ======================================================== -->
+    <section class="concept-section" id="concept">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">OUR PHILOSOPHY</span>
+          <h2 class="section-title">去除非本質的繁瑣，<br>留下最純粹的<em>手工靈魂</em></h2>
+          <p class="section-subtitle">
+            在紛擾喧囂的城市裡，我們相信年輕世代渴望更乾淨、更有風格的味蕾體驗。蛋糕星球以極簡黑白為基底，重新定義手工糕點的美學標準。
+          </p>
+        </div>
+
+        <div class="concept-grid">
+          <!-- 核心 1 -->
+          <div class="concept-card">
+            <span class="concept-number">01 / MINIMALISM</span>
+            <div class="concept-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/>
+                <path d="M12 7v10"/>
+              </svg>
+            </div>
+            <h3 class="concept-heading">黑白極簡視覺</h3>
+            <p class="concept-text">
+              捨棄人造色素與厚重翻糖，運用天然竹炭、法芙娜可可與純白十勝乳霜，呈現宛如當代藝術品般的俐落高雅外型。每一張照片，都是社群中最具質感的焦點。
+            </p>
+          </div>
+
+          <!-- 核心 2 -->
+          <div class="concept-card dark">
+            <span class="concept-number">02 / ARTISAN CRAFT</span>
+            <div class="concept-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <h3 class="concept-heading">每日小量手作慢烤</h3>
+            <p class="concept-text">
+              不走工廠流水線，堅持烘焙師每日清晨手工分蛋、打發、手工抹面。維持手工獨有的細緻毛孔與濕潤度，每一顆蛋糕皆有專屬出爐編號與溫度。
+            </p>
+          </div>
+
+          <!-- 核心 3 -->
+          <div class="concept-card">
+            <span class="concept-number">03 / LIGHT SWEET</span>
+            <div class="concept-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+            <h3 class="concept-heading">黃金減糖無負擔</h3>
+            <p class="concept-text">
+              全系列配方經由百位年輕試吃員盲測，減糖 30%~40%，以日本海藻糖取代精製白砂糖，凸顯食材天然風味。深夜追劇或好友慶生，享受美味毫無甜膩罪惡感。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SIGNATURE PRODUCTS MENU: 吸引消費購買的核心商品區
+         ======================================================== -->
+    <section class="menu-section" id="menu">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">PLANET MENU & SELECTION</span>
+          <h2 class="section-title">探索手作星球・人氣蛋糕限定</h2>
+          <p class="section-subtitle">
+            依據當日出爐小量配送。可任選尺寸與客製生日蠟燭，支援低溫宅配到府或工作室自取。
+          </p>
+        </div>
+
+        <!-- 類別切換按鈕 -->
+        <div class="category-filter-wrap">
+          <button class="filter-btn active" data-filter="all">全部手作 (All)</button>
+          <button class="filter-btn" data-filter="monochrome">經典黑白 (Monochrome)</button>
+          <button class="filter-btn" data-filter="chiffon">輕盈戚風 (Chiffon)</button>
+          <button class="filter-btn" data-filter="basque">極致巴斯克 (Basque)</button>
+          <button class="filter-btn" data-filter="box">星球禮盒 (Gift Box)</button>
+        </div>
+
+        <!-- 商品列表 -->
+        <div class="products-grid" id="productsGrid">
+          <!-- 商品 1 -->
+          <article class="product-card" data-category="monochrome" data-id="p1">
+            <span class="product-badge">熱銷 TOP 1</span>
+            <div class="product-image-box dark-bg">
+              <svg class="product-svg-art" viewBox="0 0 160 160" fill="none">
+                <circle cx="80" cy="80" r="65" fill="#18181b"/>
+                <circle cx="80" cy="80" r="54" fill="#09090b" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="4 3"/>
+                <ellipse cx="80" cy="80" rx="42" ry="18" fill="#ffffff" opacity="0.95"/>
+                <circle cx="80" cy="80" r="10" fill="#09090b"/>
+                <path d="M50 78 Q80 62 110 78" stroke="#09090b" stroke-width="2" fill="none"/>
+              </svg>
+            </div>
+            <div class="product-body">
+              <div class="product-meta-tags">
+                <span class="meta-tag">#72%法芙娜</span>
+                <span class="meta-tag">#減糖生巧</span>
+              </div>
+              <h3 class="product-title">曜黑星環・生巧慕斯蛋糕</h3>
+              <p class="product-desc">
+                以法國 72% 頂級黑巧搭配天然竹炭海綿蛋糕，內餡夾入滑順生巧甘納許與白巧香緹，苦甜交織、層次深邃。
+              </p>
+              <div class="flavor-pills">
+                <span class="flavor-pill">深焙可可</span>
+                <span class="flavor-pill">滑順生巧</span>
+                <span class="flavor-pill">零死甜</span>
+              </div>
+              <div class="size-selector-row">
+                <span class="size-label">規格尺寸：</span>
+                <div class="size-btn-group">
+                  <button class="size-chip" data-size="4吋" data-price="520">4 吋</button>
+                  <button class="size-chip selected" data-size="6吋" data-price="720">6 吋</button>
+                </div>
+              </div>
+              <div class="product-footer">
+                <div class="product-price-box">
+                  <span class="price-currency">TWD</span>
+                  <span class="price-amount" data-unit-price="720">NT$ 720</span>
+                </div>
+                <div class="product-actions">
+                  <button class="btn-quick-view" onclick="openQuickView('p1')" title="查看詳情">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="3"/>
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                    </svg>
+                  </button>
+                  <button class="btn-add-cart" onclick="addCardToCart('p1')">
+                    加入購物車
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 商品 2 -->
+          <article class="product-card" data-category="chiffon" data-id="p2">
+            <span class="product-badge">IG 熱門打卡款</span>
+            <div class="product-image-box">
+              <svg class="product-svg-art" viewBox="0 0 160 160" fill="none">
+                <ellipse cx="80" cy="120" rx="55" ry="14" fill="#d4d4d8"/>
+                <path d="M35 85 C35 65 125 65 125 85 L125 110 C125 124 35 124 35 110 Z" fill="#ffffff" stroke="#e4e4e7" stroke-width="2"/>
+                <ellipse cx="80" cy="84" rx="45" ry="16" fill="#f8f8fa"/>
+                <circle cx="80" cy="80" r="8" fill="#141416"/>
+                <circle cx="65" cy="82" r="4" fill="#71717a"/>
+                <circle cx="95" cy="82" r="4" fill="#71717a"/>
+              </svg>
+            </div>
+            <div class="product-body">
+              <div class="product-meta-tags">
+                <span class="meta-tag">#北海道十勝乳霜</span>
+                <span class="meta-tag">#雲朵戚風</span>
+              </div>
+              <h3 class="product-title">白晝極星・香草雲朵戚風</h3>
+              <p class="product-desc">
+                特選馬達加斯加天然波旁香草莢，搭配如同輕柔雲朵般的蓬鬆戚風體與十勝純生乳霜，入口即化，清爽怡人。
+              </p>
+              <div class="flavor-pills">
+                <span class="flavor-pill">天然香草</span>
+                <span class="flavor-pill">極致輕盈</span>
+                <span class="flavor-pill">高雅純白</span>
+              </div>
+              <div class="size-selector-row">
+                <span class="size-label">規格尺寸：</span>
+                <div class="size-btn-group">
+                  <button class="size-chip" data-size="4吋" data-price="490">4 吋</button>
+                  <button class="size-chip selected" data-size="6吋" data-price="690">6 吋</button>
+                </div>
+              </div>
+              <div class="product-footer">
+                <div class="product-price-box">
+                  <span class="price-currency">TWD</span>
+                  <span class="price-amount" data-unit-price="690">NT$ 690</span>
+                </div>
+                <div class="product-actions">
+                  <button class="btn-quick-view" onclick="openQuickView('p2')" title="查看詳情">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="3"/>
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                    </svg>
+                  </button>
+                  <button class="btn-add-cart" onclick="addCardToCart('p2')">
+                    加入購物車
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 商品 3 -->
+          <article class="product-card" data-category="basque" data-id="p3">
+            <span class="product-badge">主廚特調流心</span>
+            <div class="product-image-box dark-bg">
+              <svg class="product-svg-art" viewBox="0 0 160 160" fill="none">
+                <ellipse cx="80" cy="115" rx="52" ry="14" fill="#000000"/>
+                <path d="M38 75 C38 60 122 60 122 75 L120 105 C120 118 40 118 40 105 Z" fill="#202024"/>
+                <ellipse cx="80" cy="74" rx="42" ry="15" fill="#0d0d0f"/>
+                <ellipse cx="80" cy="74" rx="24" ry="8" fill="#3f3f46" stroke="#ffffff" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div class="product-body">
+              <div class="product-meta-tags">
+                <span class="meta-tag">#九號黑芝麻</span>
+                <span class="meta-tag">#焦香流心</span>
+              </div>
+              <h3 class="product-title">黑曜石・濃焙芝麻巴斯克</h3>
+              <p class="product-desc">
+                低溫慢火烘烤至微焦香氣，融合台灣頂級純黑芝麻與法國奶油乳酪，刀尖切開濃醇黑流心緩緩溢出，香氣爆棚。
+              </p>
+              <div class="flavor-pills">
+                <span class="flavor-pill">極濃芝麻</span>
+                <span class="flavor-pill">微焦乳酪</span>
+                <span class="flavor-pill">爆漿流心</span>
+              </div>
+              <div class="size-selector-row">
+                <span class="size-label">規格尺寸：</span>
+                <div class="size-btn-group">
+                  <button class="size-chip" data-size="4吋" data-price="550">4 吋</button>
+                  <button class="size-chip selected" data-size="6吋" data-price="750">6 吋</button>
+                </div>
+              </div>
+              <div class="product-footer">
+                <div class="product-price-box">
+                  <span class="price-currency">TWD</span>
+                  <span class="price-amount" data-unit-price="750">NT$ 750</span>
+                </div>
+                <div class="product-actions">
+                  <button class="btn-quick-view" onclick="openQuickView('p3')" title="查看詳情">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="3"/>
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                    </svg>
+                  </button>
+                  <button class="btn-add-cart" onclick="addCardToCart('p3')">
+                    加入購物車
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 商品 4 -->
+          <article class="product-card" data-category="monochrome" data-id="p4">
+            <span class="product-badge">當季新品</span>
+            <div class="product-image-box">
+              <svg class="product-svg-art" viewBox="0 0 160 160" fill="none">
+                <circle cx="80" cy="80" r="60" fill="#f4f4f6" stroke="#27272a" stroke-width="2"/>
+                <path d="M40 80 Q60 50 80 80 T120 80" stroke="#09090b" stroke-width="3" fill="none"/>
+                <circle cx="80" cy="55" r="7" fill="#09090b"/>
+                <ellipse cx="80" cy="80" rx="35" ry="12" fill="#ffffff" stroke="#d4d4d8"/>
+              </svg>
+            </div>
+            <div class="product-body">
+              <div class="product-meta-tags">
+                <span class="meta-tag">#鹽之花焦糖</span>
+                <span class="meta-tag">#黑炭脆餅底</span>
+              </div>
+              <h3 class="product-title">星塵隕石・海鹽焦糖乳酪</h3>
+              <p class="product-desc">
+                嚴選法國頂級鹽之花熬煮香醇太妃焦糖，底層鋪滿手作低糖竹炭脆餅碎，鹹甜交會，回甘悠長，搭配黑咖啡絕配。
+              </p>
+              <div class="flavor-pills">
+                <span class="flavor-pill">鹹甜平衡</span>
+                <span class="flavor-pill">法國鹽之花</span>
+                <span class="flavor-pill">酥脆底層</span>
+              </div>
+              <div class="size-selector-row">
+                <span class="size-label">規格尺寸：</span>
+                <div class="size-btn-group">
+                  <button class="size-chip" data-size="4吋" data-price="480">4 吋</button>
+                  <button class="size-chip selected" data-size="6吋" data-price="680">6 吋</button>
+                </div>
+              </div>
+              <div class="product-footer">
+                <div class="product-price-box">
+                  <span class="price-currency">TWD</span>
+                  <span class="price-amount" data-unit-price="680">NT$ 680</span>
+                </div>
+                <div class="product-actions">
+                  <button class="btn-quick-view" onclick="openQuickView('p4')" title="查看詳情">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="3"/>
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                    </svg>
+                  </button>
+                  <button class="btn-add-cart" onclick="addCardToCart('p4')">
+                    加入購物車
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 商品 5 -->
+          <article class="product-card" data-category="chiffon" data-id="p5">
+            <span class="product-badge">抹茶控推爆</span>
+            <div class="product-image-box dark-bg">
+              <svg class="product-svg-art" viewBox="0 0 160 160" fill="none">
+                <ellipse cx="80" cy="115" rx="55" ry="14" fill="#000"/>
+                <path d="M38 78 C38 60 122 60 122 78 L120 108 C120 122 40 122 40 108 Z" fill="#1c201a" stroke="#2a3028" stroke-width="1.5"/>
+                <ellipse cx="80" cy="76" rx="42" ry="15" fill="#2d3829"/>
+                <circle cx="80" cy="74" r="8" fill="#ffffff"/>
+                <circle cx="68" cy="76" r="6" fill="#ffffff"/>
+                <circle cx="92" cy="76" r="6" fill="#ffffff"/>
+              </svg>
+            </div>
+            <div class="product-body">
+              <div class="product-meta-tags">
+                <span class="meta-tag">#小山園抹茶</span>
+                <span class="meta-tag">#手揉嫩白玉</span>
+              </div>
+              <h3 class="product-title">黑夜幽竹・宇治白玉戚風</h3>
+              <p class="product-desc">
+                京都宇治小山園若竹抹茶粉，微苦回甘的抹茶奶霜包裹著當日現揉軟糯白玉與輕戚風，清雅不甜膩，茶香裊裊。
+              </p>
+              <div class="flavor-pills">
+                <span class="flavor-pill">宇治抹茶</span>
+                <span class="flavor-pill">Q彈白玉</span>
+                <span class="flavor-pill">大人系微苦</span>
+              </div>
+              <div class="size-selector-row">
+                <span class="size-label">規格尺寸：</span>
+                <div class="size-btn-group">
+                  <button class="size-chip" data-size="4吋" data-price="530">4 吋</button>
+                  <button class="size-chip selected" data-size="6吋" data-price="760">6 吋</button>
+                </div>
+              </div>
+              <div class="product-footer">
+                <div class="product-price-box">
+                  <span class="price-currency">TWD</span>
+                  <span class="price-amount" data-unit-price="760">NT$ 760</span>
+                </div>
+                <div class="product-actions">
+                  <button class="btn-quick-view" onclick="openQuickView('p5')" title="查看詳情">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="3"/>
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                    </svg>
+                  </button>
+                  <button class="btn-add-cart" onclick="addCardToCart('p5')">
+                    加入購物車
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 商品 6 -->
+          <article class="product-card" data-category="box" data-id="p6">
+            <span class="product-badge">派對聚會必備</span>
+            <div class="product-image-box">
+              <svg class="product-svg-art" viewBox="0 0 160 160" fill="none">
+                <rect x="35" y="45" width="90" height="75" rx="6" fill="#18181b" stroke="#ffffff" stroke-width="2"/>
+                <line x1="80" y1="45" x2="80" y2="120" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="2 2"/>
+                <line x1="35" y1="82" x2="125" y2="82" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="2 2"/>
+                <circle cx="58" cy="64" r="6" fill="#fff"/>
+                <circle cx="102" cy="64" r="6" fill="#d4d4d8"/>
+                <circle cx="58" cy="101" r="6" fill="#71717a"/>
+                <circle cx="102" cy="101" r="6" fill="#fff"/>
+              </svg>
+            </div>
+            <div class="product-body">
+              <div class="product-meta-tags">
+                <span class="meta-tag">#4入經典綜合</span>
+                <span class="meta-tag">#精緻黑白禮盒</span>
+              </div>
+              <h3 class="product-title">四芒星・行星精選切片禮盒</h3>
+              <p class="product-desc">
+                一次擁有曜黑生巧、白晝香草、黑芝麻巴斯克與海鹽焦糖各一入。黑白燙銀高質感禮盒裝，送禮或朋友分享最佳首選。
+              </p>
+              <div class="flavor-pills">
+                <span class="flavor-pill">4款人氣</span>
+                <span class="flavor-pill">聚會分享</span>
+                <span class="flavor-pill">附燙銀提袋</span>
+              </div>
+              <div class="size-selector-row">
+                <span class="size-label">規格尺寸：</span>
+                <div class="size-btn-group">
+                  <button class="size-chip selected" data-size="4入裝" data-price="580">4 入組合</button>
+                </div>
+              </div>
+              <div class="product-footer">
+                <div class="product-price-box">
+                  <span class="price-currency">TWD</span>
+                  <span class="price-amount" data-unit-price="580">NT$ 580</span>
+                </div>
+                <div class="product-actions">
+                  <button class="btn-quick-view" onclick="openQuickView('p6')" title="查看詳情">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="3"/>
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                    </svg>
+                  </button>
+                  <button class="btn-add-cart" onclick="addCardToCart('p6')">
+                    加入購物車
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         INGREDIENTS SECTION: 食材規格與工藝透明度
+         ======================================================== -->
+    <section class="ingredients-section" id="ingredients">
+      <div class="container">
+        <div class="section-header" style="color: #fff;">
+          <span class="section-eyebrow" style="color: var(--accent-silver);">PRISTINE INGREDIENTS</span>
+          <h2 class="section-title" style="color: #fff;">看得見的純淨原料，<br>每一口都對得起年輕挑剔的味蕾</h2>
+          <p class="section-subtitle" style="color: var(--accent-silver);">
+            我們嚴選全球頂級產區食材，杜絕人造香精與廉價酥油。以最誠實的配方，做最溫暖純粹的手工甜點。
+          </p>
+        </div>
+
+        <div class="ingredients-grid">
+          <div class="ingredient-item">
+            <div class="ingredient-icon-box">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
+            <h3 class="ingredient-name">日本日清紫羅蘭麵粉</h3>
+            <div class="ingredient-origin">Japan · Wheat Flour</div>
+            <p class="ingredient-desc">日本小麥之巔，粉質細如羽毛，賦予戚風蛋糕雲朵般濕潤蓬鬆的空氣感。</p>
+          </div>
+
+          <div class="ingredient-item">
+            <div class="ingredient-icon-box">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <h3 class="ingredient-name">法國依思尼 AOP 發酵奶油</h3>
+            <div class="ingredient-origin">France · Isigny Ste Mère</div>
+            <p class="ingredient-desc">諾曼第純淨乳源天然發酵，散發淡雅榛果清香，零反式脂肪，口感細膩柔滑。</p>
+          </div>
+
+          <div class="ingredient-item">
+            <div class="ingredient-icon-box">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"/></svg>
+            </div>
+            <h3 class="ingredient-name">法國法芙娜 72% 頂級黑巧</h3>
+            <div class="ingredient-origin">France · Valrhona</div>
+            <p class="ingredient-desc">可可界的愛馬仕。純天然可可脂，濃郁帶有優雅木質香與莓果酸韻，絕不死甜。</p>
+          </div>
+
+          <div class="ingredient-item">
+            <div class="ingredient-icon-box">
+              <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+            </div>
+            <h3 class="ingredient-name">黑貓低溫冷藏專業直送</h3>
+            <div class="ingredient-origin">Taiwan · Cold Express</div>
+            <p class="ingredient-desc">專利防震加固包裝盒，全程 -18°C / 4°C 恆溫配送，保證送達時外型完好如初。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         PROMO BANNER: 迎新優惠碼
+         ======================================================== -->
+    <section class="promo-banner-section">
+      <div class="container">
+        <div class="promo-card">
+          <div class="promo-info">
+            <h3>✦ 星球首購限定禮：現折 NT$ 100</h3>
+            <p>單筆訂單滿 NT$ 800 即享現折，滿 NT$ 1,200 再享黑貓低溫免運費。</p>
+          </div>
+          <div class="promo-code-box">
+            <span class="promo-code-text">PLANET100</span>
+            <button class="btn-copy-code" onclick="copyPromoCode('PLANET100')">複製代碼</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         REVIEWS SECTION: 年輕世代真實社群評價
+         ======================================================== -->
+    <section class="reviews-section" id="reviews">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">COMMUNITY VOICES</span>
+          <h2 class="section-title">年輕世代吃貨，<br>都在討論蛋糕星球</h2>
+          <p class="section-subtitle">
+            不論是閨蜜慶生、情侶紀念日、還是犒賞自己的深夜下午茶，聽聽來自社群最真實的分享。
+          </p>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              「外盒黑白極簡完全戳中我的審美！生日買『曜黑生巧慕斯』拍照被朋友問爆在哪訂的。吃起來減糖非常有感，完全不膩，生巧克力濃郁到不行！」
+            </p>
+            <div class="review-user-row">
+              <div class="user-avatar">Z</div>
+              <div class="user-info-text">
+                <strong>Zoe Lin (@zoe_dessert)</strong>
+                <span>視覺設計師 · 台北</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              「平常不愛吃太甜的蛋糕，但他們家的黑芝麻巴斯克我跟男友直接嗑掉大半個！切開那個流心真的太罪惡太銷魂了，大推給怕甜的年輕朋友。」
+            </p>
+            <div class="review-user-row">
+              <div class="user-avatar">K</div>
+              <div class="user-info-text">
+                <strong>Kevin Chen (@kevin_snap)</strong>
+                <span>攝影創作者 · 台中</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              「工作室下午茶訂了行星禮盒，包裝精緻到大家捨不得拆！戚風蛋糕體的濕潤度跟雲朵一樣輕盈，奶油清爽不卡喉嚨，絕對會無限次回購。」
+            </p>
+            <div class="review-user-row">
+              <div class="user-avatar">C</div>
+              <div class="user-info-text">
+                <strong>Chloe Wang (@chloe_studio)</strong>
+                <span>行銷企劃 · 新北</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         FAQ SECTION: 訂購常見問題
+         ======================================================== -->
+    <section class="faq-section" id="faq">
+      <div class="container faq-container">
+        <div class="section-header">
+          <span class="section-eyebrow">HELP & ORDERING FAQ</span>
+          <h2 class="section-title">常見訂購問題</h2>
+          <p class="section-subtitle">
+            所有關於手作蛋糕預購、低溫宅配配送與保存方式的詳細說明。
+          </p>
+        </div>
+
+        <div class="faq-accordion">
+          <div class="faq-item open">
+            <button class="faq-question">
+              <span>Q1. 手工蛋糕需要提前幾天預購？</span>
+              <span class="faq-icon-arrow">▼</span>
+            </button>
+            <div class="faq-answer">
+              為維護手工品質，蛋糕星球每日限量烘烤 50 顆。建議您於預計送達日至少提前 3～5 天於本網站下單預約。若遇母親節、情人節等熱門節慶，建議提前 2 週預購。
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Q2. 宅配運送過程中蛋糕會損壞碰撞嗎？</span>
+              <span class="faq-icon-arrow">▼</span>
+            </button>
+            <div class="faq-answer">
+              我們採用專利加固鎖扣盒，底部特別設置固定結構，並交由黑貓宅急便全程低溫冷藏車專屬配送。若開箱時發現非人為造成的嚴重毀損，請拍照並於 2 小時內聯繫客服，我們將立即為您補送或全額退款。
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Q3. 蛋糕最佳賞味期與保存方式為何？</span>
+              <span class="faq-icon-arrow">▼</span>
+            </button>
+            <div class="faq-answer">
+              生巧慕斯與巴斯克蛋糕冷藏保存建議 3 天、冷凍可保存 7 天；輕盈香草戚風建議冷藏 2 天內享用完畢。享用前建議冷藏退冰 15 分鐘，口感達到最佳滑順度。
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Q4. 慶生會附贈蠟燭、餐盤與刀叉嗎？</span>
+              <span class="faq-icon-arrow">▼</span>
+            </button>
+            <div class="faq-answer">
+              每顆 6 吋蛋糕均免費隨附一套極簡黑白燙銀餐盤組（5人份）與高質感環保切刀；結帳時可於備註欄勾選免費索取「極簡黑色細長蠟燭」或「客製數字蠟燭」1 組。
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         NEWSLETTER SECTION: 訂閱星系最新出爐情報
+         ======================================================== -->
+    <section class="newsletter-section">
+      <div class="container newsletter-content">
+        <h2 class="newsletter-title">加入蛋糕星球 VIP 宇宙</h2>
+        <p class="newsletter-subtitle">
+          每月接收 1 封最新手作甜點出爐預告、主廚私房新品盲測邀請，與專屬 VIP 免運券。
+        </p>
+
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" class="newsletter-input" placeholder="輸入您的電子郵件地址 (Email)..." required>
+          <button type="submit" class="newsletter-btn">免費加入</button>
         </form>
       </div>
     </section>
   </main>
 
+  <!-- ========================================================
+       FOOTER: 極簡黑白頁尾
+       遵循 onepage.md 規格：門市自取地址（光復南路 101 號）
+       ======================================================== -->
   <footer class="site-footer">
-    <div class="wrap footer-grid">
-      <div class="footer-brand"><a class="brand" href="#top" aria-label="回到藍天咖啡首頁"><span class="brand-mark" aria-hidden="true">B</span><span class="brand-copy"><strong>藍天咖啡</strong><small>BLUE SKY COFFEE</small></span></a><p>為喜愛手沖咖啡的你，留下 一段慢慢品味、微微放晴的時間。</p></div>
-      <div><p class="footer-title">網站主題</p><div class="footer-links"><a href="#story">我們的故事</a><a href="#coffee">本季選豆</a><a href="#brew">沖煮日常</a></div></div>
-      <div><p class="footer-title">聯絡我們</p><div class="footer-links"><a href="mailto:hello@bluesky.coffee">hello@bluesky.coffee</a><address>台中市西屯區僑光路 100 號</address><span>每日 10:00 — 19:00</span></div></div>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <a href="#hero" class="brand" style="color: #fff;">
+            <div class="planet-logo-icon" style="background: #222;">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="5" fill="#fff"/>
+                <ellipse cx="12" cy="12" rx="10" ry="3.5" stroke="#fff" stroke-width="1.8" fill="none" transform="rotate(-20 12 12)"/>
+              </svg>
+            </div>
+            <div class="brand-text">
+              <span>蛋糕星球</span>
+              <span style="color: #888;">CAKE PLANET</span>
+            </div>
+          </a>
+          <p>
+            專為年輕世代打造的黑白極簡手工蛋糕。堅持誠實用料、純粹手工慢烤，陪伴你在日常每一刻品嚐精緻與純淨。
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">探索手作</h4>
+          <ul class="footer-links">
+            <li><a href="#menu">曜黑生巧慕斯</a></li>
+            <li><a href="#menu">白晝香草戚風</a></li>
+            <li><a href="#menu">黑曜石芝麻巴斯克</a></li>
+            <li><a href="#menu">行星精選禮盒</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">顧客服務</h4>
+          <ul class="footer-links">
+            <li><a href="#faq">低溫宅配須知</a></li>
+            <li><a href="#faq">賞味保存指南</a></li>
+            <li><a href="#faq">企業禮品大量客製</a></li>
+            <li><a href="#faq">隱私權與服務條款</a></li>
+          </ul>
+        </div>
+
+        <!-- 依據 onepage.md 規格修改：門市地址光復南路 101 號 -->
+        <div>
+          <h4 class="footer-col-title">概念工作室</h4>
+          <div class="footer-contact-info">
+            <span>台北市大安區光復南路 101 號 (概念取貨店)</span>
+            <span>電話：(02) 2736-8899</span>
+            <span>自取時間：週二至週日 13:00 - 19:30 (週一公休)</span>
+            <span>線上客服：LINE @cakeplanet / Instagram @cakeplanet.tw</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 CAKE PLANET 蛋糕星球 · ALL RIGHTS RESERVED.</span>
+        <span>DESIGNED WITH MINIMALISM & PURITY.</span>
+      </div>
     </div>
-    <div class="wrap footer-bottom"><span>© 2025 BLUE SKY COFFEE. ALL RIGHTS RESERVED.</span><span>BREW SLOW · LIVE BRIGHT</span></div>
   </footer>
-  <div class="toast" role="status" aria-live="polite"></div>
 
+  <!-- ========================================================
+       CART DRAWER (側邊購物車抽屜)
+       ======================================================== -->
+  <div class="cart-overlay" id="cartOverlay">
+    <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="購物車內容">
+      <div class="cart-header">
+        <h3>您的預約選品 (<span id="cartHeaderQty">0</span>)</h3>
+        <button class="btn-close-cart" id="closeCartBtn" aria-label="關閉購物車">✕</button>
+      </div>
+
+      <div class="shipping-bar-box">
+        <div class="shipping-bar-text">
+          <span id="shippingNotice">滿 NT$ 1,200 享黑貓低溫免運</span>
+          <span id="shippingRemain" style="color: var(--black); font-weight: 700;">差 NT$ 1,200</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="shippingProgress"></div>
+        </div>
+      </div>
+
+      <div class="cart-items-list" id="cartItemsList">
+        <!-- 動態渲染清單 -->
+      </div>
+
+      <div class="cart-footer">
+        <div class="cart-total-row">
+          <span>總計金額 (小計)</span>
+          <span class="cart-total-price" id="cartTotalDisplay">NT$ 0</span>
+        </div>
+        <button class="btn-checkout" id="startCheckoutBtn">
+          前往結帳預訂
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ========================================================
+       CHECKOUT MODAL (結帳填單彈窗)
+       ======================================================== -->
+  <div class="modal-overlay" id="checkoutModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3>完成手作蛋糕預購單</h3>
+        <button class="btn-close-modal" id="closeCheckoutBtn">✕</button>
+      </div>
+      <div class="modal-body">
+        <form id="orderForm">
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="orderName">訂購人姓名 *</label>
+              <input type="text" id="orderName" class="form-input" placeholder="例如：蔡小姐" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="orderPhone">聯絡電話 *</label>
+              <input type="tel" id="orderPhone" class="form-input" placeholder="0912-345-678" required>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="deliveryDate">希望送達/自取日期 *</label>
+              <input type="date" id="deliveryDate" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="deliveryTimeSlot">配送時段偏好</label>
+              <select id="deliveryTimeSlot" class="form-select">
+                <option value="不指定">不指定</option>
+                <option value="13:00前 (上午)">13:00 前 (上午)</option>
+                <option value="14:00-18:00 (下午)">14:00 - 18:00 (下午)</option>
+                <option value="工作室門市自取">概念工作室門市自取</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="deliveryAddress">收件地址 (門市自取請填「自取」) *</label>
+            <input type="text" id="deliveryAddress" class="form-input" placeholder="台北市信義區..." required>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="candleReq">慶生蠟燭需求</label>
+              <select id="candleReq" class="form-select">
+                <option value="極簡黑色長蠟燭 1 支">極簡黑色長蠟燭 1 支 (免費)</option>
+                <option value="數字蠟燭 (請於備註填寫年齡)">數字蠟燭 (請備註年齡)</option>
+                <option value="不需要蠟燭">不需要蠟燭 (環保愛地球)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="promoCodeInput">優惠代碼</label>
+              <input type="text" id="promoCodeInput" class="form-input" placeholder="PLANET90 / PLANET100">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="orderNotes">備註事項 / 卡片代寫內容</label>
+            <textarea id="orderNotes" class="form-textarea" rows="2" placeholder="如有祝賀小卡代寫（30字內）或防撞特殊交代請填寫..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">付款方式</label>
+            <div class="payment-options-grid">
+              <label class="payment-option-label">
+                <input type="radio" name="payType" value="LINE Pay" checked>
+                LINE Pay
+              </label>
+              <label class="payment-option-label">
+                <input type="radio" name="payType" value="信用卡線上刷卡">
+                信用卡刷卡
+              </label>
+              <label class="payment-option-label">
+                <input type="radio" name="payType" value="黑貓貨到付款">
+                貨到付款
+              </label>
+            </div>
+          </div>
+
+          <div style="background: var(--gray-bg); padding: 14px; border-radius: var(--radius-sm); margin-bottom: 20px; font-size: 13px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+              <span>商品總金額：</span>
+              <strong id="modalSummarySubtotal">NT$ 0</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+              <span>低溫運費：</span>
+              <span id="modalSummaryShipping">免運費</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; border-top: 1px solid var(--border-light); padding-top: 6px; font-size: 15px; font-weight: 800;">
+              <span>應付總額：</span>
+              <span id="modalSummaryGrandTotal" style="font-family: 'Cinzel', serif;">NT$ 0</span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-submit-order">確認送出手作預購單 →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       QUICK VIEW MODAL (快速預覽彈窗)
+       ======================================================== -->
+  <div class="modal-overlay" id="quickViewModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="quickModalTitle">手作蛋糕詳細介紹</h3>
+        <button class="btn-close-modal" id="closeQuickViewBtn">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="quick-view-grid">
+          <div class="quick-view-img" id="quickModalImg">
+            <!-- 動態插入 SVG -->
+          </div>
+          <div>
+            <span class="meta-tag" id="quickModalTags">#手工慢烤</span>
+            <h4 style="font-size: 22px; font-weight: 800; margin: 8px 0;" id="quickModalName">蛋糕名稱</h4>
+            <p style="font-size: 14px; color: var(--gray-dark); line-height: 1.7; margin-bottom: 16px;" id="quickModalDesc">蛋糕描述</p>
+            
+            <div style="font-size: 12px; color: var(--gray-mid); margin-bottom: 14px;">
+              <div>✦ <strong>賞味指南：</strong>冷藏 3 天 / 冷凍 7 天</div>
+              <div>✦ <strong>原料來源：</strong>日本紫羅蘭小麥粉、法國依思尼奶油</div>
+              <div>✦ <strong>減糖堅持：</strong>海藻糖調配，減糖 35%</div>
+            </div>
+
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 20px;">
+              <span style="font-size: 26px; font-weight: 900; font-family: 'Cinzel', serif;" id="quickModalPrice">NT$ 720</span>
+              <button class="btn-primary" id="quickModalAddBtn" style="padding: 12px 24px; font-size: 14px;">
+                加入購物車
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       TOAST CONTAINER (提示通知泡泡)
+       ======================================================== -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- ========================================================
+       JAVASCRIPT: 互動購物車、篩選、彈窗與訂購處理
+       ======================================================== -->
   <script>
-    (() => {
-      const menuButton = document.querySelector('.menu-toggle');
-      const navLinks = document.querySelector('.nav-links');
-      const toast = document.querySelector('.toast');
-      let toastTimer;
-
-      const closeMenu = () => {
-        navLinks.classList.remove('open');
-        menuButton.setAttribute('aria-expanded', 'false');
-        menuButton.setAttribute('aria-label', '開啟導覽選單');
-        menuButton.textContent = '☰';
-      };
-      menuButton.addEventListener('click', () => {
-        const opening = !navLinks.classList.contains('open');
-        navLinks.classList.toggle('open', opening);
-        menuButton.setAttribute('aria-expanded', String(opening));
-        menuButton.setAttribute('aria-label', opening ? '關閉導覽選單' : '開啟導覽選單');
-        menuButton.textContent = opening ? '×' : '☰';
-      });
-      navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
-
-      const showToast = message => {
-        clearTimeout(toastTimer);
-        toast.textContent = message;
-        toast.classList.add('show');
-        toastTimer = setTimeout(() => toast.classList.remove('show'), 2600);
-      };
-      document.querySelectorAll('[data-coffee]').forEach(button => {
-        button.addEventListener('click', () => showToast(`已將「${button.dataset.coffee}」加入你的收藏。`));
-      });
-      document.querySelector('#subscribeForm').addEventListener('submit', event => {
-        event.preventDefault();
-        event.currentTarget.reset();
-        showToast('謝謝訂閱，下一封晴朗的風味通信即將寄出。');
-      });
-
-      const revealItems = document.querySelectorAll('.reveal');
-      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (!('IntersectionObserver' in window) || reducedMotion) {
-        revealItems.forEach(item => item.classList.add('visible'));
-      } else {
-        const observer = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: .12 });
-        revealItems.forEach(item => observer.observe(item));
+    const productsData = {
+      p1: {
+        id: 'p1',
+        name: '曜黑星環・生巧慕斯蛋糕',
+        category: 'monochrome',
+        price: 720,
+        size: '6吋',
+        desc: '以法國 72% 頂級黑巧搭配天然竹炭海綿蛋糕，內餡夾入滑順生巧甘納許與白巧香緹，苦甜交織、層次深邃。',
+        tags: '#72%法芙娜 #減糖生巧'
+      },
+      p2: {
+        id: 'p2',
+        name: '白晝極星・香草雲朵戚風',
+        category: 'chiffon',
+        price: 690,
+        size: '6吋',
+        desc: '特選馬達加斯加天然波旁香草莢，搭配如同輕柔雲朵般的蓬鬆戚風體與十勝純生乳霜，入口即化，清爽怡人。',
+        tags: '#北海道十勝乳霜 #雲朵戚風'
+      },
+      p3: {
+        id: 'p3',
+        name: '黑曜石・濃焙芝麻巴斯克',
+        category: 'basque',
+        price: 750,
+        size: '6吋',
+        desc: '低溫慢火烘烤至微焦香氣，融合台灣頂級純黑芝麻與法國奶油乳酪，刀尖切開濃醇黑流心緩緩溢出，香氣爆棚。',
+        tags: '#九號黑芝麻 #焦香流心'
+      },
+      p4: {
+        id: 'p4',
+        name: '星塵隕石・海鹽焦糖乳酪',
+        category: 'monochrome',
+        price: 680,
+        size: '6吋',
+        desc: '嚴選法國頂級鹽之花熬煮香醇太妃焦糖，底層鋪滿手作低糖竹炭脆餅碎，鹹甜交會，回甘悠長，搭配黑咖啡絕配。',
+        tags: '#鹽之花焦糖 #黑炭脆餅底'
+      },
+      p5: {
+        id: 'p5',
+        name: '黑夜幽竹・宇治白玉戚風',
+        category: 'chiffon',
+        price: 760,
+        size: '6吋',
+        desc: '京都宇治小山園若竹抹茶粉，微苦回甘的抹茶奶霜包裹著當日現揉軟糯白玉與輕戚風，清雅不甜膩，茶香裊裊。',
+        tags: '#小山園抹茶 #手揉嫩白玉'
+      },
+      p6: {
+        id: 'p6',
+        name: '四芒星・行星精選切片禮盒',
+        category: 'box',
+        price: 580,
+        size: '4入裝',
+        desc: '一次擁有曜黑生巧、白晝香草、黑芝麻巴斯克與海鹽焦糖各一入。黑白燙銀高質感禮盒裝，送禮或朋友分享最佳首選。',
+        tags: '#4入經典綜合 #精緻黑白禮盒'
       }
-    })();
+    };
+
+    let cart = [];
+
+    function showToast(message, icon = '✦') {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      toast.className = 'toast-card';
+      toast.innerHTML = `<span style="font-size: 16px;">${icon}</span> <span>${message}</span>`;
+      container.appendChild(toast);
+
+      requestAnimationFrame(() => {
+        toast.classList.add('show');
+      });
+
+      setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 400);
+      }, 3000);
+    }
+
+    function copyPromoCode(code) {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(code).then(() => {
+          showToast(`已複製優惠代碼「${code}」！結帳時輸入即折 NT$100`, '✓');
+        }).catch(() => {
+          prompt('請手動複製代碼：', code);
+        });
+      } else {
+        prompt('請手動複製代碼：', code);
+      }
+    }
+
+    function updateCartUI() {
+      const cartCountBadge = document.getElementById('cartCountBadge');
+      const cartHeaderQty = document.getElementById('cartHeaderQty');
+      const cartItemsList = document.getElementById('cartItemsList');
+      const cartTotalDisplay = document.getElementById('cartTotalDisplay');
+      const shippingNotice = document.getElementById('shippingNotice');
+      const shippingRemain = document.getElementById('shippingRemain');
+      const shippingProgress = document.getElementById('shippingProgress');
+
+      const totalQty = cart.reduce((acc, item) => acc + item.quantity, 0);
+      const subtotal = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+
+      cartCountBadge.textContent = totalQty;
+      cartHeaderQty.textContent = totalQty;
+      cartTotalDisplay.textContent = `NT$ ${subtotal.toLocaleString()}`;
+
+      const threshold = 1200;
+      if (subtotal >= threshold) {
+        shippingNotice.textContent = '恭喜！已達成黑貓低溫免運門檻 🎉';
+        shippingRemain.textContent = '免運費';
+        shippingProgress.style.width = '100%';
+      } else {
+        const remain = threshold - subtotal;
+        shippingNotice.textContent = '滿 NT$ 1,200 享黑貓低溫免運';
+        shippingRemain.textContent = `差 NT$ ${remain.toLocaleString()}`;
+        const pct = Math.min(100, Math.round((subtotal / threshold) * 100));
+        shippingProgress.style.width = `${pct}%`;
+      }
+
+      if (cart.length === 0) {
+        cartItemsList.innerHTML = `
+          <div class="cart-empty-state">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M8 12h8"/>
+            </svg>
+            <p style="font-size: 15px; font-weight: 700; margin-bottom: 6px; color: var(--black);">購物車目前是空的</p>
+            <p style="font-size: 13px;">快去挑選一顆專屬您的手工蛋糕吧！</p>
+          </div>
+        `;
+      } else {
+        cartItemsList.innerHTML = cart.map((item, index) => `
+          <div class="cart-item">
+            <div class="cart-item-img">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="12" r="9"/>
+                <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(-20 12 12)"/>
+              </svg>
+            </div>
+            <div class="cart-item-info">
+              <h4>${item.name}</h4>
+              <div class="cart-item-spec">${item.size} · NT$ ${item.price}</div>
+              <div class="cart-qty-ctrl">
+                <button onclick="changeQty(${index}, -1)" aria-label="減少數量">-</button>
+                <span>${item.quantity}</span>
+                <button onclick="changeQty(${index}, 1)" aria-label="增加數量">+</button>
+              </div>
+            </div>
+            <div>
+              <div class="cart-item-price">NT$ ${(item.price * item.quantity).toLocaleString()}</div>
+              <div class="cart-item-remove" onclick="removeCartItem(${index})">移除</div>
+            </div>
+          </div>
+        `).join('');
+      }
+    }
+
+    function changeQty(index, delta) {
+      if (!cart[index]) return;
+      cart[index].quantity += delta;
+      if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+        showToast('已自購物車移除商品');
+      }
+      updateCartUI();
+    }
+
+    function removeCartItem(index) {
+      if (!cart[index]) return;
+      const name = cart[index].name;
+      cart.splice(index, 1);
+      updateCartUI();
+      showToast(`已移除「${name}」`);
+    }
+
+    function addToCart(productObj) {
+      const existing = cart.find(item => item.id === productObj.id && item.size === productObj.size);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({
+          id: productObj.id,
+          name: productObj.name,
+          price: productObj.price,
+          size: productObj.size,
+          quantity: 1
+        });
+      }
+      updateCartUI();
+      showToast(`已將「${productObj.name} (${productObj.size})」加入購物車！`, '✓');
+      document.getElementById('cartOverlay').classList.add('open');
+    }
+
+    function addCardToCart(productId) {
+      const card = document.querySelector(`.product-card[data-id="${productId}"]`);
+      if (!card) return;
+      const baseProduct = productsData[productId];
+      const selectedSizeChip = card.querySelector('.size-chip.selected');
+      const size = selectedSizeChip ? selectedSizeChip.getAttribute('data-size') : baseProduct.size;
+      const price = selectedSizeChip ? parseInt(selectedSizeChip.getAttribute('data-price'), 10) : baseProduct.price;
+
+      addToCart({
+        id: productId,
+        name: baseProduct.name,
+        price: price,
+        size: size
+      });
+    }
+
+    function quickAddToCart(name, price, size, category) {
+      addToCart({
+        id: 'hero-cake',
+        name: name,
+        price: price,
+        size: size
+      });
+    }
+
+    document.querySelectorAll('.product-card').forEach(card => {
+      const sizeChips = card.querySelectorAll('.size-chip');
+      const priceAmount = card.querySelector('.price-amount');
+
+      sizeChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          sizeChips.forEach(c => c.classList.remove('selected'));
+          chip.classList.add('selected');
+
+          const price = chip.getAttribute('data-price');
+          if (price && priceAmount) {
+            priceAmount.textContent = `NT$ ${parseInt(price, 10).toLocaleString()}`;
+          }
+        });
+      });
+    });
+
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+        productCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    const openCartBtn = document.getElementById('openCartBtn');
+    const closeCartBtn = document.getElementById('closeCartBtn');
+    const cartOverlay = document.getElementById('cartOverlay');
+
+    openCartBtn.addEventListener('click', () => {
+      cartOverlay.classList.add('open');
+    });
+
+    closeCartBtn.addEventListener('click', () => {
+      cartOverlay.classList.remove('open');
+    });
+
+    cartOverlay.addEventListener('click', (e) => {
+      if (e.target === cartOverlay) {
+        cartOverlay.classList.remove('open');
+      }
+    });
+
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileDrawer.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileDrawer.classList.remove('open');
+      });
+    });
+
+    let currentQuickViewProduct = null;
+    const quickViewModal = document.getElementById('quickViewModal');
+    const closeQuickViewBtn = document.getElementById('closeQuickViewBtn');
+
+    function openQuickView(productId) {
+      const p = productsData[productId];
+      if (!p) return;
+      currentQuickViewProduct = p;
+
+      document.getElementById('quickModalName').textContent = p.name;
+      document.getElementById('quickModalDesc').textContent = p.desc;
+      document.getElementById('quickModalPrice').textContent = `NT$ ${p.price}`;
+      document.getElementById('quickModalTags').textContent = p.tags;
+
+      document.getElementById('quickModalImg').innerHTML = `
+        <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="#0a0a0c" stroke-width="1.8">
+          <circle cx="12" cy="12" r="9"/>
+          <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(-20 12 12)"/>
+        </svg>
+      `;
+
+      quickViewModal.classList.add('open');
+    }
+
+    closeQuickViewBtn.addEventListener('click', () => {
+      quickViewModal.classList.remove('open');
+    });
+
+    quickViewModal.addEventListener('click', (e) => {
+      if (e.target === quickViewModal) {
+        quickViewModal.classList.remove('open');
+      }
+    });
+
+    document.getElementById('quickModalAddBtn').addEventListener('click', () => {
+      if (currentQuickViewProduct) {
+        addToCart(currentQuickViewProduct);
+        quickViewModal.classList.remove('open');
+      }
+    });
+
+    const startCheckoutBtn = document.getElementById('startCheckoutBtn');
+    const checkoutModal = document.getElementById('checkoutModal');
+    const closeCheckoutBtn = document.getElementById('closeCheckoutBtn');
+    const orderForm = document.getElementById('orderForm');
+
+    startCheckoutBtn.addEventListener('click', () => {
+      if (cart.length === 0) {
+        showToast('您的購物車內尚無任何蛋糕，請先挑選商品！', '!');
+        return;
+      }
+
+      const subtotal = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+      const isFreeShipping = subtotal >= 1200;
+      const shippingFee = isFreeShipping ? 0 : 180;
+      const grandTotal = subtotal + shippingFee;
+
+      document.getElementById('modalSummarySubtotal').textContent = `NT$ ${subtotal.toLocaleString()}`;
+      document.getElementById('modalSummaryShipping').textContent = isFreeShipping ? '免運費 (已滿額)' : `NT$ ${shippingFee} (黑貓低溫)`;
+      document.getElementById('modalSummaryGrandTotal').textContent = `NT$ ${grandTotal.toLocaleString()}`;
+
+      cartOverlay.classList.remove('open');
+      checkoutModal.classList.add('open');
+
+      const targetDate = new Date();
+      targetDate.setDate(targetDate.getDate() + 3);
+      const dateStr = targetDate.toISOString().split('T')[0];
+      document.getElementById('deliveryDate').value = dateStr;
+      document.getElementById('deliveryDate').min = dateStr;
+    });
+
+    closeCheckoutBtn.addEventListener('click', () => {
+      checkoutModal.classList.remove('open');
+    });
+
+    checkoutModal.addEventListener('click', (e) => {
+      if (e.target === checkoutModal) {
+        checkoutModal.classList.remove('open');
+      }
+    });
+
+    orderForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('orderName').value;
+      const phone = document.getElementById('orderPhone').value;
+      const date = document.getElementById('deliveryDate').value;
+      const slot = document.getElementById('deliveryTimeSlot').value;
+      const address = document.getElementById('deliveryAddress').value;
+      const orderId = 'CP-' + Math.floor(100000 + Math.random() * 900000);
+
+      const itemsSummary = cart.map(i => `${i.name} (${i.size}) x ${i.quantity}`).join('\n• ');
+
+      alert(`【蛋糕星球 預購成功確認】\n\n感謝您的預約，${name}！\n訂單編號：${orderId}\n預約到貨日期：${date} (${slot})\n收件地址：${address}\n聯絡電話：${phone}\n\n訂購明細：\n• ${itemsSummary}\n\n我們已發送訂單確認信至您的信箱，烘焙師將於當日清晨為您現做出爐！`);
+
+      cart = [];
+      updateCartUI();
+      checkoutModal.classList.remove('open');
+      orderForm.reset();
+      showToast(`訂單 ${orderId} 建立成功！感謝您的支持。`, '★');
+    });
+
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isOpen = item.classList.contains('open');
+
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) {
+          item.classList.add('open');
+        }
+      });
+    });
+
+    document.getElementById('newsletterForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const input = e.target.querySelector('input');
+      const email = input.value;
+      input.value = '';
+      showToast(`已成功將 ${email} 加入蛋糕星球 VIP 名單，專屬優惠券已寄出！`, '✓');
+    });
+
+    updateCartUI();
   </script>
 </body>
 </html>
