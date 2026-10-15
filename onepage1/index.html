@@ -460,15 +460,18 @@
     .hero-visual-card {
       position: relative;
       background: var(--black);
-      border-radius: 28px;
-      padding: 44px 36px;
+      border-radius: 24px;
+      padding: 20px;
       color: var(--white);
       box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
       overflow: hidden;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       border: 1px solid var(--border-dark);
+      width: fit-content;
+      margin-left: auto;
     }
 
     .hero-visual-card::before {
@@ -483,20 +486,6 @@
       pointer-events: none;
     }
 
-    .hero-tag-badge {
-      align-self: flex-start;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: var(--white);
-      padding: 5px 14px;
-      border-radius: var(--radius-full);
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      font-weight: 700;
-      margin-bottom: 24px;
-    }
-
     /* Hero Photo (依據 onepage.1md.md 規格：不使用 CSS 插畫，使用既有圖片 400x300) */
     .hero-photo {
       width: 400px;
@@ -505,7 +494,6 @@
       object-fit: cover;
       border-radius: var(--radius-md);
       display: block;
-      margin: 10px 0 20px;
       box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
       transition: transform var(--transition-smooth);
     }
@@ -2071,22 +2059,8 @@
 
         <!-- 右側視覺卡片：依據 onepage.1md.md 規格（不使用 CSS 插畫，使用既有圖片 400x300） -->
         <div class="hero-visual-card">
-          <div class="hero-tag-badge">SEASONAL SIGNATURE · 01</div>
-          
           <!-- 右欄圖片：hero.jpg.jfif (寬度 400px，高度 300px) -->
-          <img class="hero-photo" src="hero.jpg.jfif" width="400" height="300" alt="蛋糕星球 曜黑星環手工蛋糕" onerror="this.onerror=null; this.src='images/hero.jpg.jfif';">
-
-          <div class="hero-cake-details">
-            <h3 class="hero-cake-name">曜黑星環・生巧克力慕斯</h3>
-            <p class="hero-cake-specs">72% 法國法芙娜黑巧 · 日本紫羅蘭麵粉 · 6 吋</p>
-            
-            <div class="hero-cake-footer">
-              <span class="hero-price">NT$ 720</span>
-              <button class="hero-quick-btn" onclick="quickAddToCart('曜黑星環・生巧克力慕斯', 720, '6吋', '經典黑白')">
-                立即預訂 ＋
-              </button>
-            </div>
-          </div>
+          <img class="hero-photo" src="hero.jpg.jfif" width="400" height="300" alt="蛋糕星球 手工蛋糕" onerror="this.onerror=null; this.src='images/hero.jpg';">
         </div>
       </div>
     </section>
